@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- the folowing link is for facebook and instegram and twitter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/vue/dist/vue.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+    <script src="/assets/js/config.js"></script>
+    <script src="/assets/js/machines.js"></script>
+    <script src="/assets/js/components/product.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+
+    <title>Cherkkoffie</title>
+</head>
+
+<main id="app">
+    <nav class="sticky-top">
+
+        <h2>
+            <div v-html="brand">{{brand}}</div>
+        </h2>
+        <div class="container-fluid" class="navlinks">
+            <!-- <shopping-cart></shopping-cart> -->
+
+            <button class="btn btn-primary position-relative" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <div id=cartButton>
+                        <div class="cart">
+                            <span class="total-quantity">{{totalQuantity}}</span>
+                        </div>
+                    </div>
+                </span>
+            </button>
+            <ul id="shoppingCart" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <h3>Shopping Cart:</h3>
+                <li v-for="machine in cart" :key="machine.id"><span id="shopping">Name:</span> {{machine.name}}__
+                    <span id="shopping">Quantity:</span>
+                    ({{machine.quantity}})__
+                    <span id="shopping">Price:</span> ${{machine.price*machine.quantity}}
+                </li>
+                <li> <span id="shopping">Total Price:</span> ${{totalPrice}} </li>
+            </ul>
+
+            <a href="/signIn.html" class="btn btn-primary">LOG IN</a>
+
+            <button class="btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false"> &#9662;
+
+            </button>
+
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#footer"> Contact us</a></li>
+                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Coffeemaker">About</a></li>
+
+
+
+        </div>
+    </nav>
+
+    <header>
+        <h1>
+            <div v-html="title">{{title}}</div>
+        </h1>
+    </header>
+
+
+    <!-- <div class="block">
+
+        <div class="card container-fluid col-md-5" v-for="machine in machines">
+            <product :machine_data="machine"></product>
+        </div>
+
+    </div> -->
+
+
+
+
+    <section class="products block">
+        <div class="card container-fluid col-md-5" v-for="machine in machines" :key="machine.id">
+            <a :href="imagePath+machine.image"> <img :src="imagePath+machine.image" class="card-img-top"
+                    :alt="machine.alt"></a>
+            <div class="card-body">
+                <h5>{{machine.name}}</h5>
+                <h5>{{machine.machineNum}}</h5>
+                <p class="card-text">{{machine.text}}</p>
+                <p>Price: {{machine.price}}$</p>
+                <p class="soldOut" v-if="machine.stock===0">Sold Out</p>
+                <p class="soldOut" v-else-if="machine.stock<=5 && machine.stock>0">Almost Sold Out</p>
+                <p v-else-if="machine.stock>5">In Stock</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="updateCart(machine,'substract')"
+                    :disabled="machine.stock === 0 && machine.quantity===0"
+                    :class="{disabledButton: machine.stock===0 && machine.quantity===0}">-</button>
+                <span>{{machine.quantity}}</span>
+                <button class=" addToCart btn btn-primary" @click="updateCart(machine,'add')"
+                    :disabled="machine.stock === 0" :class="{disabledButton: machine.stock === 0}">+</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <section class="products">
+            <div class="card container-fluid col-md-5">
+                <a :href="image"> <img :src="image" class="card-img-top" :alt="alt"></a>
+                <div class="card-body">
+                    <h5>{{name}}</h5>
+                    <h5>{{machineNum}}</h5>
+                    <p class="card-text">{{text}}</p>
+                    <p>Price: {{price}}$</p>
+                    <p class="soldOut"> Almost Sold Out</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-cart" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                    <button class="addToCart btn btn-primary" @click="addToCart">-</button>
+                    <span>0</span>
+                    <button class="addToCart btn btn-primary" @click="addToCart">+</button>
+                </div>
+            </div>
+        </section> -->
+
+    <!-- <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/profitionalcoffem.jpg"> <img
+                    src="/assets/images/webshop/profitionalcoffem.jpg" class="card-img-top"
+                    alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Profitional</h5>
+                <h5>CM359e</h5>
+                <p class="card-text">For coffee lovers, this is the one you need.</p>
+                <p>Price: 899$</p>
+                <p>in Stock</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/freshcoffeem.jpg"> <img src="/assets/images/webshop/freshcoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Fresh</h5>
+                <h5>CM356f</h5>
+                <p class="card-text">Always fresh coffee. With or without milk, so tasty.</p>
+                <p>Price: 150$</p>
+                <p>Stock: 8</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/filtercoffeem.jpg"> <img src="/assets/images/webshop/filtercoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Filter</h5>
+                <h5>CM352f</h5>
+                <p class="card-text">A wonderfull coffee machine. For people who love filtered coffee, this is
+                    the
+                    best.</p>
+                <p>Price: 200$</p>
+                <p>Stock: 12</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/easycoffeem.jpg"> <img src="/assets/images/webshop/easycoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Easy</h5>
+                <h5>CM363f</h5>
+                <p class="card-text">Nice set. Making coffee with this set is an easy and wonderfull
+                    experience.</p>
+                <p>Price: 450$</p>
+                <p>Stock: 25</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/silvercoffeem.jpg"> <img src="/assets/images/webshop/silvercoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Silver</h5>
+                <h5>CM365f</h5>
+                <p class="card-text">A beautifull silver coffee machine, tasty espresso and cappuccino.</p>
+                <p>Price: 130$</p>
+                <p>Stock: 30</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/smallcoffeem.jpg"> <img src="/assets/images/webshop/smallcoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Small & Red</h5>
+                <h5>CM368e</h5>
+                <p class="card-text">Small but tasty. A beautifull red coffee machine that makes a tasty
+                    coffee.</p>
+                <p>Price: 99$</p>
+                <p>Stock: 0</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/takeawaycoffeem.jpg"> <img src="/assets/images/webshop/takeawaycoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Take away and enjoy</h5>
+                <h5>CM369e</h5>
+                <p class="card-text">So tasty, so easy to use. Take it with you wherever you go.</p>
+                <p>Price: 55$</p>
+                <p>Stock: 60</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/handycoffeem.jpg"> <img src="/assets/images/webshop/handycoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Handy and tasty</h5>
+                <h5>CM363e</h5>
+                <p class="card-text">Handy and easy to use coffee machine. Makes very tasty coffee.</p>
+                <p>Price: 80$</p>
+                <p>Stock: 20</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/soprofitionalcoffeem.jpg"> <img
+                    src="/assets/images/webshop/soprofitionalcoffeem.jpg" class="card-img-top"
+                    alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Super Machine</h5>
+                <h5>CM370f</h5>
+                <p class="card-text">A profitional coffee machine, for coffee lovers.</p>
+                <p>Price: 999$</p>
+                <p>Stock: 8</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/everydaycoffeem.jpg"> <img src="/assets/images/webshop/everydaycoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Everyday Coffee</h5>
+                <h5>CM373e</h5>
+                <p class="card-text">Tasty coffee for your everyday life, for you, for your guests, for
+                    everybody.</p>
+                <p>Price: 80$</p>
+                <p>Stock: 15</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/moderncoffeem.jpg"> <img src="/assets/images/webshop/moderncoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Modern</h5>
+                <h5>CM377f</h5>
+                <p class="card-text">Modern coffee machine, so beautifull and tasty.</p>
+                <p>Price: 199$</p>
+                <p>Stock: 12</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/supereasycoffeem.jpg"> <img
+                    src="/assets/images/webshop/supereasycoffeem.jpg" class="card-img-top"
+                    alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Super easy</h5>
+                <h5>CM371e</h5>
+                <p class="card-text">Super easy coffee machine, for who wants tasty coffee fast.</p>
+                <p>Price: 50$</p>
+                <p>Stock: 22</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/arabiccoffeem.jpg"> <img src="/assets/images/webshop/arabiccoffeem.jpg"
+                    class="card-img-top" alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Arabic</h5>
+                <h5>CM378e</h5>
+                <p class="card-text">Set for fresh bewed arabic coffee, so tasty, you'll never regret it.</p>
+                <p>Price: 80$</p>
+                <p>Stock: 10</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+
+        <div class="card container-fluid col-md-5">
+            <a href="/assets/images/webshop/superprofitionalcoffeem.jpg"> <img
+                    src="/assets/images/webshop/superprofitionalcoffeem.jpg" class="card-img-top"
+                    alt="Photo by mentatdgt from Pexels"></a>
+            <div class="card-body">
+                <h5>Super profitional</h5>
+                <h5>CM380f</h5>
+                <p class="card-text">Super profitional coffee machine. Tasty coffee, it's worth it.</p>
+                <p>Price: 1982$</p>
+                <p>Stock: 2</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <button class="addToCart btn btn-primary" @click="addToCart">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+ -->
+
+</main>
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
+    <p class="col-md-4 mb-0 text-muted">&copy; 2021 Cherkkoffie</p>
+    <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <!-- facebook, twitter,instagram are form: https://www.codegrepper.com/ -->
+        <li><a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+        </li>
+        <li><a href="https://www.twitter.com/" class="fa fa-twitter"></a>
+        </li>
+        <li><a href="https://www.instagram.com/" class=" fa fa-instagram"></a>
+        </li>
+    </ul>
+</footer>
+<!-- <script src="/assets/js/main.js"></script> -->
+<script src="/assets/js/app.js"></script>
+</body>
+
+</html>
