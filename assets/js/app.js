@@ -257,11 +257,13 @@ let app = new Vue({
                     if (updateType === 'substract') {
                         if (this.machines[i].quantity !== 0) {
                             this.totalQuantity--
-                            this.machines[i].quantity-- && this.machines[i].stock++;
+                            this.machines[i].quantity--
+                            this.machines[i].stock++;
                             this.totalPrice -= this.machines[i].price
                         }
                     } else {
-                        this.machines[i].quantity++ && this.machines[i].stock--;
+                        this.machines[i].quantity++
+                        this.machines[i].stock--;
                         this.totalQuantity++
                         this.totalPrice += this.machines[i].price
 
