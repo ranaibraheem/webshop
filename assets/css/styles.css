@@ -64,7 +64,19 @@ nav {
 #shopping {
     color: darkred;
     font-weight: bold;
+    padding-left: 2rem;
 }
+
+#deletBtn {
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#shoppingCart {
+    padding: 3rem;
+}
+
 
 /*-header-----------------------------------------------------------------------------*/
 h1 {

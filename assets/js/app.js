@@ -13,6 +13,7 @@ let app = new Vue({
             type: Number,
             default: 0,
         },
+        shoppingCart: [],
 
 
 
@@ -235,22 +236,17 @@ let app = new Vue({
 
     },
 
-
-
-
     computed: {
         title() {
             return this.brand + " " + this.appName
         },
         cart() {
             return this.machines.filter(machine => machine.quantity > 0)
-            //here it will filter out all machines that have quantity more than 0
-            // The filter() method creates a new array with all elements that pass the test implemented by the provided function.
         },
     },
 
-
     methods: {
+
         updateCart(machine, updateType) {
             for (let i = 0; i < this.machines.length; i++) {
                 if (this.machines[i].id === machine.id) {
@@ -260,22 +256,41 @@ let app = new Vue({
                             this.machines[i].quantity--
                             this.machines[i].stock++;
                             this.totalPrice -= this.machines[i].price
+                            this.shoppingCart = this.cart
                         }
                     } else {
                         this.machines[i].quantity++
                         this.machines[i].stock--;
                         this.totalQuantity++
                         this.totalPrice += this.machines[i].price
-
+                        this.shoppingCart = this.cart
                     }
                     break;
                 }
             }
         },
-    },
 
 
+        remove() {
+            this.shoppingCart.length = this.cart.length = 0
+            this.totalPrice = 0
+            this.totalQuantity = 0
+            for (let k = 0; k < this.machines.length; k++) {
+                if (this.machines[k].quantity != 0) {
+                    this.machines[k].stock += this.machines[k].quantity
+                    this.machines[k].quantity = 0
+                }
+            }
 
+        },
+        removeMachine(index) {
+            this.totalQuantity -= this.shoppingCart[index].quantity
+            this.totalPrice -= this.shoppingCart[index].price * this.shoppingCart[index].quantity
+            this.shoppingCart[index].stock += this.shoppingCart[index].quantity
+            this.shoppingCart[index].quantity = 0
+            this.shoppingCart.splice(index, 1)
+        }
+    }
 
 })
 

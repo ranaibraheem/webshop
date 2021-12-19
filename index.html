@@ -32,7 +32,6 @@
             <div v-html="brand">{{brand}}</div>
         </h2>
         <div class="container-fluid" class="navlinks">
-            <!-- <shopping-cart></shopping-cart> -->
 
             <button class="btn btn-primary position-relative" type="button" id="dropdownMenuButton1"
                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,12 +50,20 @@
             </button>
             <ul id="shoppingCart" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <h3>Shopping Cart:</h3>
-                <li v-for="machine in cart" :key="machine.id"><span id="shopping">Name:</span> {{machine.name}}__
+
+                <li v-for="(machine, index) in shoppingCart" :key="machine.id"><span id="shopping">Name:</span>
+                    {{machine.name}}
                     <span id="shopping">Quantity:</span>
-                    ({{machine.quantity}})__
-                    <span id="shopping">Price:</span> ${{machine.price*machine.quantity}}
+                    ({{machine.quantity}})
+                    <span id="shopping">Price:</span> ${{machine.price*machine.quantity}} <span id="shopping">Remove
+                        Item:</span><i class="fa fa-trash-o" id="deletBtn" @click=" removeMachine(index)"></i>
                 </li>
-                <li> <span id="shopping">Total Price:</span> ${{totalPrice}} </li>
+                <hr>
+
+
+                <li> <span id=" shopping">Total Price:</span> ${{totalPrice}} </li>
+                <li><span id="shopping">Remove All:</span><i class="fa fa-trash-o" id="deletBtn" @click="remove()"></i>
+                </li>
             </ul>
 
             <a href="/signIn.html" class="btn btn-primary">LOG IN</a>
