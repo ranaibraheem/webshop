@@ -18,6 +18,7 @@ let app = new Vue({
 
 
 
+
         machines: [{
                 name: "Simple and tasty",
                 image: "simplecoffem.jpg",
@@ -236,11 +237,7 @@ let app = new Vue({
         // this.totalQuantity = parseInt(localStorage.getItem("totalQuantity"))
         localStorage.getItem('totalQuantity');
         localStorage.getItem('totalPrice');
-        // localStorage.setItem('shoppingCart', this.shoppingCart)
         localStorage.getItem('shoppingCart');
-
-
-
     },
 
     computed: {
@@ -252,8 +249,8 @@ let app = new Vue({
         },
     },
 
-    methods: {
 
+    methods: {
         updateCart(machine, updateType) {
             for (let i = 0; i < this.machines.length; i++) {
                 if (this.machines[i].id === machine.id) {
@@ -264,6 +261,7 @@ let app = new Vue({
                             this.machines[i].stock++;
                             this.totalPrice -= this.machines[i].price
                             this.shoppingCart = this.cart
+
                             localStorage.removeItem('shoppingCart');
                             localStorage.totalQuantity = this.totalQuantity
                             localStorage.totalPrice = this.totalPrice
@@ -276,8 +274,10 @@ let app = new Vue({
                         this.totalQuantity++
                         this.totalPrice += this.machines[i].price
                         this.shoppingCart = this.cart
+
                         localStorage.setItem('totalQuantity', this.totalQuantity)
                         localStorage.setItem('totalPrice', this.totalPrice)
+
                     }
                     break;
                 }
@@ -290,10 +290,10 @@ let app = new Vue({
             this.shoppingCart.length = this.cart.length = 0
             this.totalPrice = 0
             this.totalQuantity = 0
+
             localStorage.removeItem('totalQuantity');
             localStorage.removeItem('totalPrice');
             localStorage.removeItem('shoppingCart');
-
 
 
 
@@ -305,21 +305,34 @@ let app = new Vue({
             }
 
         },
+
         removeMachine(index) {
             this.totalQuantity -= this.shoppingCart[index].quantity
             this.totalPrice -= this.shoppingCart[index].price * this.shoppingCart[index].quantity
             this.shoppingCart[index].stock += this.shoppingCart[index].quantity
             this.shoppingCart[index].quantity = 0
             this.shoppingCart.splice(index, 1)
+
             localStorage.totalQuantity = this.totalQuantity
             localStorage.totalPrice = this.totalPrice
+            localStorage.machines = localStorage.shoppingCart
+
 
         }
     },
+
+
     watch: {
         shoppingCart: {
             handler(newUpdate) {
                 localStorage.shoppingCart = JSON.stringify(newUpdate);
+            },
+            deep: true
+
+        },
+        machines: {
+            handler(newUpdate) {
+                localStorage.machines = JSON.stringify(newUpdate);
             },
             deep: true
 
@@ -331,8 +344,11 @@ let app = new Vue({
             this.shoppingCart = JSON.parse(localStorage.shoppingCart);
             //if there is data in localStorage it will update the value
         }
+        if (localStorage.machines) {
+            this.machines = JSON.parse(localStorage.machines);
+            //if there is data in localStorage it will update the value
+        }
     },
-
 
 })
 
