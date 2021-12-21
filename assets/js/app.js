@@ -198,7 +198,6 @@ let app = new Vue({
 
 
             },
-
             {
                 name: "Arabic",
                 image: "arabiccoffeem.jpg",
@@ -212,7 +211,6 @@ let app = new Vue({
 
 
             },
-
             {
                 name: "Super profitional",
                 image: "superprofitionalcoffeem.jpg",
@@ -225,7 +223,73 @@ let app = new Vue({
                 quantity: 0
 
 
+            },
+            {
+                name: "Work time coffee",
+                image: "worktimecoffeem.jpg",
+                alt: "Photo by Ekrulila from Pexels",
+                machineNum: "CM490e",
+                text: "Tasty coffee. You can make it fast and start your work actively",
+                price: 75,
+                stock: 43,
+                id: 16,
+                quantity: 0
+
+
+            },
+            {
+                name: "Time out",
+                image: "timeoutcoffeem.jpg",
+                alt: "Photo by Rachel Claire from Pexels",
+                machineNum: "CM495e",
+                text: "To relax and take a time out and drink some tasty coffee.",
+                price: 160,
+                stock: 16,
+                id: 17,
+                quantity: 0
+
+
+            },
+            {
+                name: "Nice coffee",
+                image: "nicecoffeem.jpg",
+                alt: "Photo by Lynnelle Richardson from Pexels",
+                machineNum: "CM494e",
+                text: "Nice coffee machine that makes a tasty coffee for you.",
+                price: 399,
+                stock: 20,
+                id: 18,
+                quantity: 0
+
+
+            },
+            {
+                name: "Coffee lovers",
+                image: "coffeeloverscoffeem.jpg",
+                alt: "Photo by Clam Lo from Pexels",
+                machineNum: "CM483e",
+                text: "If you love coffe, you will love this coffee machine.",
+                price: 275,
+                stock: 18,
+                id: 19,
+                quantity: 0
+
+
+            },
+            {
+                name: "Cappuccino lovers",
+                image: "cappuccinoloverscoffeem.jpg",
+                alt: "Photo by Pavel Danilyuk from Pexels",
+                machineNum: "CM400f",
+                text: "This coffee machine is for you, espically for you, cappuccino lovers.",
+                price: 2560,
+                stock: 9,
+                id: 20,
+                quantity: 0
+
+
             }
+
         ],
     },
 
