@@ -17,6 +17,8 @@ let app = new Vue({
 
 
 
+
+
         machines: [{
                 name: "Simple and tasty",
                 image: "simplecoffem.jpg",
@@ -196,7 +198,6 @@ let app = new Vue({
 
 
             },
-
             {
                 name: "Arabic",
                 image: "arabiccoffeem.jpg",
@@ -210,7 +211,6 @@ let app = new Vue({
 
 
             },
-
             {
                 name: "Super profitional",
                 image: "superprofitionalcoffeem.jpg",
@@ -223,7 +223,73 @@ let app = new Vue({
                 quantity: 0
 
 
+            },
+            {
+                name: "Work time coffee",
+                image: "worktimecoffeem.jpg",
+                alt: "Photo by Ekrulila from Pexels",
+                machineNum: "CM490e",
+                text: "Tasty coffee. You can make it fast and start your work actively",
+                price: 75,
+                stock: 43,
+                id: 16,
+                quantity: 0
+
+
+            },
+            {
+                name: "Time out",
+                image: "timeoutcoffeem.jpg",
+                alt: "Photo by Rachel Claire from Pexels",
+                machineNum: "CM495e",
+                text: "To relax and take a time out and drink some tasty coffee.",
+                price: 160,
+                stock: 16,
+                id: 17,
+                quantity: 0
+
+
+            },
+            {
+                name: "Nice coffee",
+                image: "nicecoffeem.jpg",
+                alt: "Photo by Lynnelle Richardson from Pexels",
+                machineNum: "CM494e",
+                text: "Nice coffee machine that makes a tasty coffee for you.",
+                price: 399,
+                stock: 20,
+                id: 18,
+                quantity: 0
+
+
+            },
+            {
+                name: "Coffee lovers",
+                image: "coffeeloverscoffeem.jpg",
+                alt: "Photo by Clam Lo from Pexels",
+                machineNum: "CM483e",
+                text: "If you love coffe, you will love this coffee machine.",
+                price: 275,
+                stock: 18,
+                id: 19,
+                quantity: 0
+
+
+            },
+            {
+                name: "Cappuccino lovers",
+                image: "cappuccinoloverscoffeem.jpg",
+                alt: "Photo by Pavel Danilyuk from Pexels",
+                machineNum: "CM400f",
+                text: "This coffee machine is for you, espically for you, cappuccino lovers.",
+                price: 2560,
+                stock: 9,
+                id: 20,
+                quantity: 0
+
+
             }
+
         ],
     },
 
@@ -233,7 +299,9 @@ let app = new Vue({
         this.totalQuantity = localStorage.getItem('totalQuantity') !== null ? parseInt(localStorage.getItem('totalQuantity')) : 0;
         // this.totalPrice = parseFloat(localStorage.getItem("totalPrice"))
         // this.totalQuantity = parseInt(localStorage.getItem("totalQuantity"))
-
+        localStorage.getItem('totalQuantity');
+        localStorage.getItem('totalPrice');
+        localStorage.getItem('shoppingCart');
     },
 
     computed: {
@@ -245,8 +313,8 @@ let app = new Vue({
         },
     },
 
-    methods: {
 
+    methods: {
         updateCart(machine, updateType) {
             for (let i = 0; i < this.machines.length; i++) {
                 if (this.machines[i].id === machine.id) {
@@ -257,6 +325,12 @@ let app = new Vue({
                             this.machines[i].stock++;
                             this.totalPrice -= this.machines[i].price
                             this.shoppingCart = this.cart
+
+                            localStorage.removeItem('shoppingCart');
+                            localStorage.totalQuantity = this.totalQuantity
+                            localStorage.totalPrice = this.totalPrice
+
+
                         }
                     } else {
                         this.machines[i].quantity++
@@ -264,9 +338,14 @@ let app = new Vue({
                         this.totalQuantity++
                         this.totalPrice += this.machines[i].price
                         this.shoppingCart = this.cart
+
+                        localStorage.setItem('totalQuantity', this.totalQuantity)
+                        localStorage.setItem('totalPrice', this.totalPrice)
+
                     }
                     break;
                 }
+
             }
         },
 
@@ -275,6 +354,13 @@ let app = new Vue({
             this.shoppingCart.length = this.cart.length = 0
             this.totalPrice = 0
             this.totalQuantity = 0
+
+            localStorage.removeItem('totalQuantity');
+            localStorage.removeItem('totalPrice');
+            localStorage.removeItem('shoppingCart');
+
+
+
             for (let k = 0; k < this.machines.length; k++) {
                 if (this.machines[k].quantity != 0) {
                     this.machines[k].stock += this.machines[k].quantity
@@ -283,14 +369,50 @@ let app = new Vue({
             }
 
         },
+
         removeMachine(index) {
             this.totalQuantity -= this.shoppingCart[index].quantity
             this.totalPrice -= this.shoppingCart[index].price * this.shoppingCart[index].quantity
             this.shoppingCart[index].stock += this.shoppingCart[index].quantity
             this.shoppingCart[index].quantity = 0
             this.shoppingCart.splice(index, 1)
+
+            localStorage.totalQuantity = this.totalQuantity
+            localStorage.totalPrice = this.totalPrice
+            localStorage.machines = localStorage.shoppingCart
+
+
         }
-    }
+    },
+
+
+    watch: {
+        shoppingCart: {
+            handler(newUpdate) {
+                localStorage.shoppingCart = JSON.stringify(newUpdate);
+            },
+            deep: true
+
+        },
+        machines: {
+            handler(newUpdate) {
+                localStorage.machines = JSON.stringify(newUpdate);
+            },
+            deep: true
+
+        },
+
+    },
+    mounted() {
+        if (localStorage.shoppingCart) {
+            this.shoppingCart = JSON.parse(localStorage.shoppingCart);
+            //if there is data in localStorage it will update the value
+        }
+        if (localStorage.machines) {
+            this.machines = JSON.parse(localStorage.machines);
+            //if there is data in localStorage it will update the value
+        }
+    },
 
 })
 
