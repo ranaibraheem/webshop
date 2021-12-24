@@ -21,6 +21,7 @@
     <script src="/assets/js/components/product.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
 
     <title>Cherkkoffie</title>
 </head>
@@ -58,7 +59,6 @@
                         </div>
                         <hr>
 
-
                         <div class="modal-body">
                             <h6>Cart Items:</h6>
                             <ul id="shoppingCart">
@@ -69,15 +69,12 @@
                                     ({{machine.quantity}})
                                     <span id="shopping">Price:</span> ${{machine.price*machine.quantity}}<span><i
                                             class="fa fa-trash-o" id="deletBtn"
-                                            @click=" removeMachine(index)"></i></span>
-                                </li>
+                                            @click=" removeMachine(index)"></i></span></li>
                                 <hr>
                                 <li> <span id="shopping">Total Price:</span> ${{totalPrice}} </li>
                                 <li><span id="shopping">Remove All:</span><i class="fa fa-trash-o" id="deletBtn"
-                                        @click="remove()"></i>
-                                </li>
+                                        @click="remove()"></i></li>
                             </ul>
-
 
                         </div>
                         <div class="modal-footer">
@@ -87,68 +84,22 @@
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-            <!-- <button class="btn btn-primary position-relative" type="button" id="dropdownMenuButton1"
-                data-bs-toggle="dropdown" aria-expanded="false">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                </svg><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    <div id=cartButton>
-                        <div class="cart">
-                            <span class="total-quantity">{{totalQuantity}}</span>
-                        </div>
-                    </div>
-                </span>
-            </button>
-            <ul id="shoppingCart" class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <h3>Shopping Cart:</h3>
-
-                <li v-for="(machine, index) in shoppingCart" :key="machine.id"><span id="shopping">Name:</span>
-                    {{machine.name}}
-                    <span id="shopping">Quantity:</span>
-                    ({{machine.quantity}})
-                    <span id="shopping">Price:</span> ${{machine.price*machine.quantity}} <span id="shopping">Remove
-                        Item:</span><i class="fa fa-trash-o" id="deletBtn" @click=" removeMachine(index)"></i>
-                </li>
-                <hr>
-
-
-                <li> <span id="shopping">Total Price:</span> ${{totalPrice}} </li>
-                <li><span id="shopping">Remove All:</span><i class="fa fa-trash-o" id="deletBtn" @click="remove()"></i>
-                </li>
-            </ul> -->
-
-
-
-
-
-
             <a href="/signIn.html" class="btn btn-primary">LOG IN</a>
+
+            <select @change="filterMachine()" v-model="machine_filter" class="btn btn-primary">
+                <option value="all">All...</option>
+                <option value="bigmachine">Big Machines</option>
+                <option value="smallmachine">Small Machines</option>
+            </select>
 
             <button class="btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                 aria-expanded="false"> &#9662;
 
             </button>
 
-
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#footer"> Contact us</a></li>
                 <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Coffeemaker">About</a></li>
-
-
-
         </div>
     </nav>
 
@@ -167,7 +118,7 @@
     </div> -->
 
     <section class="products block">
-        <div class="card container-fluid col-md-5" v-for="machine in machines" :key="machine.id">
+        <div class="card container-fluid col-md-5" v-for="machine in machines" :key="machine.id" v-show="machine.show">
             <a :href="imagePath+machine.image"> <img :src="imagePath+machine.image" class="card-img-top"
                     :alt="machine.alt"></a>
             <div class="card-body">
@@ -208,7 +159,6 @@
         </li>
     </ul>
 </footer>
-<!-- <script src="/assets/js/main.js"></script> -->
 <script src="/assets/js/app.js"></script>
 </body>
 
