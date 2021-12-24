@@ -75,6 +75,13 @@ nav {
     background-color: #eae0d5;
 }
 
+option {
+    color: #cad2c5;
+    background-color: #414833;
+    border-color: #656d4a;
+    text-align: left;
+}
+
 /*-header-----------------------------------------------------------------------------*/
 h1 {
     color: rgb(245, 240, 216);
