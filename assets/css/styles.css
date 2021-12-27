@@ -50,8 +50,21 @@ nav {
 }
 
 .dropdown-menu {
-    border-radius: 1rem;
-    background-color: #eae0d5;
+    background-color: #414833;
+    padding: 0;
+    margin: 0;
+}
+
+.dorpdown-item {
+    background-color: #414833;
+    border-color: #656d4a;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(255, 81, 0);
+    border-color: #656d4a;
+    cursor: pointer;
+
 }
 
 #shopping {
@@ -80,6 +93,9 @@ option {
     background-color: #414833;
     border-color: #656d4a;
     text-align: left;
+    cursor: pointer;
+    padding: 2rem;
+
 }
 
 /*-header-----------------------------------------------------------------------------*/
@@ -305,7 +321,7 @@ h5 {
 @media (max-width:375px) {
     h2 {
         font-size: 2em;
-        padding-bottom: 2rem;
+        padding-bottom: 0.5rem;
     }
 
     h1 {
@@ -326,6 +342,11 @@ h5 {
     #footer {
         height: 90px;
     }
+
+    option {
+        font-size: 0.5rem;
+    }
+
 
     /*facebook, instagram, twitter*/
     .fa {
