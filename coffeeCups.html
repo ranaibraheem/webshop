@@ -5,69 +5,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cherkkoffie</title>
-
 
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- the folowing link is for facebook and instegram and twitter -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
-
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
     <script src="/node_modules/vue/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src="/assets/js/machines.js"></script>
+    <script src="/assets/js/cups.js"></script>
+    <script src="/assets/js/components/productsc.js"></script>
+    <script src="/assets/js/components/cartc.js"></script>
 
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
 
+    <title>Cherkkoffie Coffee Cups</title>
 </head>
 
-<body>
-    <div class="block">
-        <nav id="app" class="container-fluid" class="navlinks">
+<main id="appC">
+    <nav>
+        <!-- <nav class="sticky-top"> -->
+        <div class="container-fluid" class="navlinks">
             <h2>
                 <div v-html="brand">{{brand}}</div>
             </h2>
-        </nav>
-        <div class="sidenav">
-            <div id="homeNav">
 
-                <div class="sideBtn"><a href="/coffeeMachines.html" class="btn btn-primary">Coffee Machines</a></div>
+            <shoppingc ref="shoppingComponent" :cart-c="cartC" :shopping-cart-c="shoppingCartC"
+                :total-quantity-c="totalQuantityC" :total-price-c="totalPriceC">
+            </shoppingc>
 
-                <div class="sideBtn"><a href="/coffeeBeans.html" class="btn btn-primary">Coffee Beans</a></div>
+            <select @change="filterCup()" v-model="cup_filter" class="btn btn-primary">
+                <option selected value="all">All</option>
+                <option value="setCups">Set</option>
+                <option value="perstuckCups">Per Stuck</option>
+            </select>
+            <a href="/index.html" class="btn btn-primary">Home</a>
 
-                <div class="sideBtn"><a href="/coffeeCups.html" class="btn btn-primary">Coffee Cups</a></div>
-
-
-                <div class="sideBtn"> <a href="/signIn.html" class="btn btn-primary">LOG IN</a></div>
-
-                <div class="sideBtn"><button class="btn btn-primary" type="button" id="dropdownMenuButton1"
-                        data-bs-toggle="dropdown" aria-expanded="false">More Information &#9662;
-                    </button>
-
-
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#footer" style="color:#cad2c5"> Contact us</a></li>
-                        <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Coffeemaker"
-                                style="color:#cad2c5">About</a></li>
-                    </ul>
-
-                </div>
-            </div>
         </div>
+    </nav>
+    <header>
+        <h1>
+            <div v-html="title">{{title}}</div>
+        </h1>
+    </header>
 
-        <img id="homeImg" src="/assets/images/coffeeGif1.gif" alt="animated coffee cup">
-    </div>
-    <script src="/assets/js/app.js"></script>
-</body>
+    <productsc ref="cupsComponent" :sale-30()="sale30()" :sale-50()="sale50()"></productsc>
+
+</main>
+
 <footer class="block d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
     <p class="col-md-4 mb-0 text-muted">&copy; 2021 Cherkkoffie</p>
     <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="/index.html" class="nav-link px-2 text-muted">Home</a></li>
         <!-- facebook, twitter,instagram are form: https://www.codegrepper.com/ -->
         <li><a href="https://www.facebook.com/" class="fa fa-facebook"></a>
         </li>
@@ -77,5 +70,9 @@
         </li>
     </ul>
 </footer>
+
+<script src="/assets/js/appC.js"></script>
+
+</body>
 
 </html>

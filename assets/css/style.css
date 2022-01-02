@@ -71,6 +71,7 @@ nav {
     color: darkred;
     font-weight: bold;
     padding-left: 1rem;
+    padding-right: 0.7rem;
 }
 
 #deletBtn {
@@ -80,7 +81,7 @@ nav {
 }
 
 #shoppingCart {
-    padding: 3rem;
+    padding: 1.5rem;
 }
 
 #cartBorder {
@@ -152,7 +153,7 @@ header {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.411);
     transition: 0.3s;
-    width: 18rem;
+    width: 20rem;
     margin: 2rem;
     background-color: #f2e9e4;
     border-radius: 20px;
@@ -202,6 +203,11 @@ a.image-link {
     border-color: #656d4a;
     border-radius: 50px;
     cursor: pointer;
+    box-shadow: 0 60px 100px 0 rgb(0, 0, 0);
+    transform: translateY(-0.20em);
+
+
+
 }
 
 .badge badge-light {
@@ -266,6 +272,84 @@ h5 {
     border-radius: 50px;
 }
 
+.onSale {
+    position: relative;
+    color: grey;
+}
+
+.onSale:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 2px solid;
+    border-color: rgba(243, 0, 0, 0.671);
+
+
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+
+.newPrice30 {
+    color: rgb(0, 149, 137);
+    font-weight: bold;
+}
+
+.newPrice50 {
+    color: rgb(0, 98, 190);
+    font-weight: bold;
+}
+
+
+
+#border {
+    border-color: lightgrey;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+#saleBorder {
+    border-color: rgba(0, 121, 111, 0.15) !important;
+    border-style: solid !important;
+    border-radius: 10px !important;
+    padding: 0.4rem;
+}
+
+/* sidebar-----------------------------------------------------------------------------*/
+.sidenav {
+    height: auto;
+    /* Full-height: remove this if you want "auto" height */
+    width: 200px;
+    /* Set the width of the sidebar */
+    /* position: fixed; */
+    /* Fixed Sidebar (stay in place on scroll) */
+    /* z-index: 1; */
+    /* Stay on top */
+    /* top: 0; */
+    /* Stay at the top */
+    left: 0;
+    background-color: #fff1e69d;
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 20px;
+    border-radius: 10px;
+    margin-right: 3rem;
+}
+
+
+
+.sideBtn {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+
 /* footer------------------------------------------------------------------------------*/
 /*the footer stays onL*/
 #footer {
@@ -273,7 +357,9 @@ h5 {
     width: 100%;
     height: 80px;
     margin-top: 100px;
+    margin-bottom: 0;
     background-color: #f2e9e4;
+    border-radius: 10px;
 }
 
 /*facebook, instagram, twitter*/
@@ -306,16 +392,61 @@ h5 {
     font-size: 20px;
 }
 
+/*home page-----------------------------------------------------------------------------*/
+#homeNav {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+#homeImg {
+    background-size: 100% 100%;
+    width: 1500px;
+    height: 900px;
+    opacity: 0.5;
+}
+
+
 /* responsive --------------------------------------------------------------------------*/
+@media (min-width:901px) and (max-width:1750px) {
+    #homeImg {
+        width: 650px;
+        height: 550px;
+    }
+}
+
+@media (min-width:509px) and (max-width:900px) {
+    #homeImg {
+        background-size: 100% 100%;
+        width: 350px;
+        height: 250px
+    }
+
+}
+
 @media (min-width:375px) and (max-width:510px) {
     h2 {
-        font-size: 2.5em;
-        padding-bottom: 2rem;
+        font-size: 2em;
+        padding-bottom: 0.5rem;
     }
 
     h1 {
         font-size: 1.5em;
     }
+
+    #homeImg {
+        background-size: 100% 100%;
+        width: 400px;
+        height: 350px
+    }
+
+    #homeNav {
+        text-align: center;
+        padding-top: 0.2rem;
+        padding-bottom: 0.25rem;
+    }
+
+
 }
 
 @media (max-width:375px) {
@@ -347,6 +478,17 @@ h5 {
         font-size: 0.5rem;
     }
 
+    #homeImg {
+        background-size: 100% 100%;
+        width: 300px;
+        height: 250px
+    }
+
+    #homeNav {
+        text-align: center;
+        padding-top: 0;
+        padding-bottom: 0.2rem;
+    }
 
     /*facebook, instagram, twitter*/
     .fa {
@@ -459,12 +601,168 @@ Photo by Noah Frohn from Pexels
 tinycoffeem: CM514m
 Photo by Tim Douglas from Pexels
 
+uniccoffeem: CM911m
+Photo by Georgi Petrov from Pexels*/
 
 
-/*
+/*responsive block
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: space-between;
     flex-wrap: wrap;
  */
+
+/* blur image:
+ filter: blur(8px);
+ -webkit-filter: blur(8px); */
+
+
+
+
+
+
+
+
+/* blackcoffeec: 
+Photo by Chevanon Photography from Pexels */
+
+/* nicebrowncoffeec:
+Photo by Pelageia Zelenina from Pexels */
+
+/* browncoffeec:
+Photo by Valeriia Miller from Pexels */
+
+/* whitecoffeec: 
+Photo by Alin Luna from Pexels */
+
+/* greycoffeec:
+Photo by Vitaly Vlasov from Pexels */
+
+/* nicecoffeec:
+Photo by Marta Dzedyshko from Pexels */
+
+/* potterycoffeec:
+Photo by Cup of Couple from Pexels */
+
+
+/* beautifullcoffeec:
+Photo by SpotwizardLee from Pexels */
+
+/* bigcoffeec:
+Photo by Ioana Motoc from Pexels */
+
+/* whitebigcoffeec:
+Photo by cottonbro from Pexels */
+
+/* smallwhitecoffeec:
+Photo by Rachel Claire from Pexels */
+
+/* bigpinkcoffeec:
+Photo by Harper Sunday from Pexels */
+
+/* greencoffeec:
+Photo by Olga Mironova from Pexels */
+
+/* greenbrowncoffeec:
+Photo by Nida from Pexels */
+
+/* portablecoffeec:
+Photo by Quang Anh Ha Nguyen from Pexels */
+
+/* greynicecoffeec:
+Photo by Anna Rye from Pexels */
+
+/* bigbeautifulcoffeec:
+Photo by Karolina Grabowska from Pexels */
+
+/* orangecoffeec:
+Photo by Tim Douglas from Pexels */
+
+/* whitegoldcoffeec:
+Photo by Ioana Motoc from Pexels */
+
+/* verynicecoffeec:
+Photo by Eneida Nieves from Pexels */
+
+
+/* uniccoffec:
+Photo by Skyler Ewing from Pexels */
+
+
+
+
+
+
+/*......................................................................
+
+/* coffeeHomePage:
+
+Photo by Jean-Paul Wright from Pexels
+*/
+
+/*.....................................................................
+
+
+
+/* beans1:
+Photo by Cup of Couple from Pexels */
+
+
+/* beans2:
+Photo by Cup of Couple from Pexels */
+
+/* beans3:
+ Photo by Denys Gromov from Pexels*/
+
+
+/* beans4:
+Photo by Thirdman from Pexels */
+
+/* beams5:
+Photo by Los Muertos Crew from Pexels */
+
+/* beans6:
+istock */
+
+/* beans7:
+Photo by Ave Calvar Martinez from Pexels */
+
+/* beans8:
+Photo by bacho nadiradze from Pexels */
+
+/* beans9:
+Photo by Cup of Couple from Pexels */
+
+/* beans10:
+Photo by Alexas Fotos from Pexels */
+
+/* beans11:
+Photo by Engin Akyurt from Pexels */
+
+/* beans12:
+Photo by Ryutaro Tsukata from Pexels */
+
+/* beans13:
+Photo by Cup of Couple from Pexels */
+
+/* beans14
+Photo by cottonbro from Pexels */
+
+/* beans15:
+Photo by Nicola Barts from Pexels */
+
+/* beans16:
+Photo by lyncoln Miller from Pexels */
+
+/* beans17:
+Photo by Mariakray from Pexels */
+
+/* beans18:
+Photo by Pavel Danilyuk from Pexels */
+
+/* beans19:
+Photo by Cup of Couple from Pexels */
+
+/* beans20:
+Photo by Lisa from Pexels */
