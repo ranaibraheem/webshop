@@ -1,33 +1,33 @@
-Vue.component('shopping', {
+Vue.component('shoppingb', {
     data() {
         return {
-            machineItems: [],
+            beanItems: [],
         }
     },
     props: {
-        shoppingCart: {
+        shoppingCartB: {
             type: Array,
         },
-        totalQuantity: {
+        totalQuantityB: {
             type: Number,
             default: 0,
         },
-        totalPrice: {
+        totalPriceB: {
             type: Number,
             default: 0,
         },
     },
 
     created() {
-        this.machineItems = machines;
+        this.beanItems = beans;
     },
 
     methods: {
         remove() {
             this.$root.$emit('remove')
         },
-        removeMachine(index) {
-            this.$root.$emit('remove-machine', index)
+        removeItem(index) {
+            this.$root.$emit('remove-item', index)
         },
     },
 
@@ -42,7 +42,7 @@ Vue.component('shopping', {
         </svg><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             <div id=cartButton>
                 <div class="cart">
-                    <span class="total-quantity">{{totalQuantity}}</span>
+                    <span class="total-quantity">{{totalQuantityB}}</span>
                 </div>
             </div>
         </span>
@@ -63,22 +63,22 @@ Vue.component('shopping', {
                     <h6>Cart Items:</h6>
                     <div id="border">
                         <ol id="shoppingCart">
-                        <li v-for="(machine, index) in shoppingCart" :key="machine.id" >
+                        <li v-for="(bean, index) in shoppingCartB" :key="bean.id" >
                             <span id="shopping">Name:</span>
-                            {{machine.name}}<br>
+                            {{bean.name}}<br>
                             <span id="shopping">Quantity:</span>
-                            ({{machine.quantity}})
+                            ({{bean.quantity}})
                             <br>
                             <span id="shopping">Price:</span>
-                            <span v-if="machine.onSale30"> <span class="newPrice30"> <b>$ {{(machine.price - (machine.price * 30 / 100))*machine.quantity}}</b> <span id="saleBorder">Sale 30%</span></span></span>
-                            <span v-else-if="machine.onSale50"> <span class="newPrice50"> <b>$ {{(machine.price - (machine.price * 50 / 100))*machine.quantity}}</b> <span id="saleBorder"> Sale 50%</span></span></span>
-                            <span v-else><b>$ {{machine.price*machine.quantity}}</b></span>
+                            <span v-if="bean.onSale30"> <span class="newPrice30"> <b>$ {{(bean.price - (bean.price * 30 / 100))*bean.quantity}}</b> <span id="saleBorder">Sale 30%</span></span></span>
+                            <span v-else-if="bean.onSale50"> <span class="newPrice50"> <b>$ {{(bean.price - (bean.price * 50 / 100))*bean.quantity}}</b> <span id="saleBorder"> Sale 50%</span></span></span>
+                            <span v-else><b>$ {{bean.price*bean.quantity}}</b></span>
                             <br>
-                            <span><span id="shopping">Delete:</span><i class="fa fa-trash-o" id="deletBtn" @click=" removeMachine(index)"></i></span><hr></li>
+                            <span><span id="shopping">Delete:</span><i class="fa fa-trash-o" id="deletBtn" @click=" removeItem(index)"></i></span><hr></li>
                         </ol>
                         <ul id="shoppingCart">
                             <li> <span id="shopping">Total Price:</span>
-                            <span><b>$ {{totalPrice}}</b></span>
+                            <span><b>$ {{totalPriceB}}</b></span>
                             </li>
                             <li><span id="shopping">Remove All:</span><i class="fa fa-trash-o" id="deletBtn"
                                     @click="remove()"></i></li>

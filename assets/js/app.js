@@ -9,7 +9,6 @@ let app = new Vue({
 		machine_filter: 'all',
 		totalPrice: 0,
 		totalQuantity: 0,
-
 	},
 
 	created() {
@@ -20,8 +19,6 @@ let app = new Vue({
 
 		localStorage.getItem('totalQuantity');
 		localStorage.getItem('totalPrice');
-
-
 	},
 
 	computed: {
@@ -33,33 +30,64 @@ let app = new Vue({
 		},
 	},
 
-
 	methods: {
+		sale30() {
+			this.machines.forEach(machine => {
+				if (machine.onSale30) {
+					machine.newPrice30 = machine.price - (machine.price * 30 / 100)
+				} else {
+					machine.price = machine.price
+				}
+			})
+		},
+		sale50() {
+			this.machines.forEach(machine => {
+				if (machine.onSale50) {
+					machine.newPrice50 = machine.price - (machine.price * 50 / 100)
+				} else {
+					machine.price = machine.price
+				}
+			})
+		},
+
 		addToCart(machine, updateType) {
 			for (let i = 0; i < this.machines.length; i++) {
 
 				if (this.machines[i].id === machine.id) {
 					if (updateType === 'substract') {
 						if (this.machines[i].quantity !== 0) {
+
 							this.totalQuantity--
 
 							this.machines[i].quantity--
 							this.machines[i].stock++;
 
-							this.totalPrice -= this.machines[i].price
-							this.shoppingCart = this.cart
+							if (this.machines[i].onSale30) {
+								this.totalPrice -= this.machines[i].newPrice30
+							} else if (this.machines[i].onSale50) {
+								this.totalPrice -= this.machines[i].newPrice50
+							} else {
+								this.totalPrice -= this.machines[i].price
 
+							}
+							this.shoppingCart = this.cart
 							localStorage.removeItem('shoppingCart');
 							localStorage.totalQuantity = this.totalQuantity
 							localStorage.totalPrice = this.totalPrice
-
 						}
 					} else {
 						this.machines[i].quantity++
 						this.machines[i].stock--;
-						this.totalQuantity++
-						this.totalPrice += this.machines[i].price
+						this.totalQuantity++;
 						this.shoppingCart = this.cart
+
+						if (this.machines[i].onSale30) {
+							this.totalPrice += this.machines[i].newPrice30
+						} else if (this.machines[i].onSale50) {
+							this.totalPrice += this.machines[i].newPrice50
+						} else {
+							this.totalPrice += this.machines[i].price
+						}
 
 						localStorage.setItem('totalQuantity', this.totalQuantity)
 						localStorage.setItem('totalPrice', this.totalPrice)
@@ -87,7 +115,16 @@ let app = new Vue({
 
 		removeItem(index) {
 			this.totalQuantity -= this.shoppingCart[index].quantity
-			this.totalPrice -= this.shoppingCart[index].price * this.shoppingCart[index].quantity
+
+			if (this.shoppingCart[index].onSale30) {
+				this.totalPrice -= this.shoppingCart[index].newPrice30 * this.shoppingCart[index].quantity
+			} else if (this.shoppingCart[index].onSale50) {
+				this.totalPrice -= this.shoppingCart[index].newPrice50 * this.shoppingCart[index].quantity
+			} else {
+				this.totalPrice -= this.shoppingCart[index].price * this.shoppingCart[index].quantity
+
+			}
+
 			this.shoppingCart[index].stock += this.shoppingCart[index].quantity
 			this.shoppingCart[index].quantity = 0
 			this.shoppingCart.splice(index, 1)
@@ -106,9 +143,7 @@ let app = new Vue({
 					element.show = element.category != this.machine_filter ? false : true;
 				});
 			}
-
 		},
-
 	},
 
 	mounted() {
@@ -132,6 +167,7 @@ let app = new Vue({
 		this.$on('remove-machine', (index) => {
 			this.removeItem(index)
 		})
+
 	},
 
 	watch: {
