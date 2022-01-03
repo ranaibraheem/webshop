@@ -8,8 +8,9 @@
 
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- the folowing link is for facebook and instegram and twitter -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 
@@ -43,9 +44,21 @@
                 <option value="bigmachine">Big</option>
                 <option value="smallmachine">Small</option>
             </select>
+
+            <button class="btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">Other Products &#9662;
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="/coffeeBeans.html" style="color:#cad2c5">Coffee Beans</a></li>
+                <li><a class="dropdown-item" href="/coffeeCups.html" style="color:#cad2c5">Coffee Cups</a></li>
+            </ul>
+
             <a href="/index.html" class="btn btn-primary">Home</a>
 
+
+
         </div>
+
     </nav>
     <header>
         <h1>
@@ -61,7 +74,6 @@
     <p class="col-md-4 mb-0 text-muted">&copy; 2021 Cherkkoffie</p>
     <ul class="nav col-md-4 justify-content-end">
         <li class="nav-item"><a href="/index.html" class="nav-link px-2 text-muted">Home</a></li>
-        <!-- facebook, twitter,instagram are form: https://www.codegrepper.com/ -->
         <li><a href="https://www.facebook.com/" class="fa fa-facebook"></a>
         </li>
         <li><a href="https://www.twitter.com/" class="fa fa-twitter"></a>
