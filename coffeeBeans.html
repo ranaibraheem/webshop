@@ -30,10 +30,17 @@
 <main id="appB">
     <nav>
         <!-- <nav class="sticky-top"> -->
-        <div class="container-fluid" class="navlinks">
-            <h2>
-                <div v-html="brand">{{brand}}</div>
-            </h2>
+        <h2>
+            <div v-html="brand">{{brand}}</div>
+        </h2>
+
+
+    </nav>
+    <header>
+        <h1>
+            <div v-html="title">{{title}}</div>
+        </h1>
+        <div class="container-fluid navlinks">
 
             <shoppingb ref="shoppingComponent" :cart-b="cartB" :shopping-cart-b="shoppingCartB"
                 :total-quantity-b="totalQuantityB" :total-price-b="totalPriceB">
@@ -55,13 +62,8 @@
             </ul>
 
             <a href="/index.html" class="btn btn-primary">Home</a>
-
         </div>
-    </nav>
-    <header>
-        <h1>
-            <div v-html="title">{{title}}</div>
-        </h1>
+
     </header>
 
     <productsb ref="BeansComponent" :sale-30()="sale30()" :sale-50()="sale50()"></productsb>

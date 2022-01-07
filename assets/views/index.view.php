@@ -24,12 +24,10 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
 </head>
 <body>
-  <div class="container-fluid">
-  <nav id="app" class="container-fluid" class="navlinks">
+  <nav id="app">
             <h2>
                 <div><?=$brand;?></div>
             </h2>
-            <button class="btn btn-primary" type="button"><a href="index.html">cherkkoffie</a></button>
 
         </nav>
 
@@ -40,6 +38,11 @@
 <br>
 <?="$greeting $name";?>
     </h1>
+    <div class="container-fluid navlinks">
+
+    <button class="btn btn-primary" type="button"><a href="index.html" class="navlinks">cherkkoffie</a></button>
+    </div>
+
     </header>
     <h2>Colors:</h2>
     <ul>
@@ -55,7 +58,6 @@
         <?php endforeach?>
     </ul>
 
-    </div>
 </body>
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
     <p class="col-md-4 mb-0 text-muted">&copy; 2021 Cherkkoffie</p>
