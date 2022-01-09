@@ -30,10 +30,16 @@
 <main id="app">
     <nav>
         <!-- <nav class="sticky-top"> -->
-        <div class="container-fluid" class="navlinks">
-            <h2>
-                <div v-html="brand">{{brand}}</div>
-            </h2>
+        <h2>
+            <div v-html="brand">{{brand}}</div>
+        </h2>
+    </nav>
+
+    <header>
+        <h1>
+            <div v-html="title">{{title}}</div>
+        </h1>
+        <div class="container-fluid navlinks">
 
             <shopping ref="shoppingComponent" :cart="cart" :shopping-cart="shoppingCart" :total-quantity="totalQuantity"
                 :total-price="totalPrice">
@@ -54,16 +60,9 @@
             </ul>
 
             <a href="/index.html" class="btn btn-primary">Home</a>
-
-
-
         </div>
 
-    </nav>
-    <header>
-        <h1>
-            <div v-html="title">{{title}}</div>
-        </h1>
+
     </header>
 
     <products ref="machinesComponent" :sale-30()="sale30()" :sale-50()="sale50()"></products>
