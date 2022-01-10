@@ -69,7 +69,6 @@ nav {
     background-color: rgb(255, 81, 0);
     border-color: #656d4a;
     cursor: pointer;
-
 }
 
 #shopping {
@@ -101,7 +100,6 @@ option {
     text-align: left;
     cursor: pointer;
     padding: 2rem;
-
 }
 
 /*-header-----------------------------------------------------------------------------*/
@@ -210,9 +208,6 @@ a.image-link {
     cursor: pointer;
     box-shadow: 0 60px 100px 0 rgb(0, 0, 0);
     transform: translateY(-0.20em);
-
-
-
 }
 
 .badge badge-light {
@@ -346,8 +341,6 @@ h5 {
     border-radius: 10px;
     margin-right: 3rem;
 }
-
-
 
 .sideBtn {
     margin-top: 6rem;
