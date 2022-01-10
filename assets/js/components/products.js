@@ -8,11 +8,29 @@ Vue.component('products', {
     props: {},
     created() {
         this.machineItems = machines;
+        this.getProducts();
     },
     methods: {
         updateCart(machine, updateType) {
             this.$root.$emit('update-cart', machine, updateType)
         },
+
+        getProducts() {
+            let self = this;
+
+            axios({
+                method: 'GET',
+                url: '?page=coffeeMachines&action=getdata',
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            }).then(function(response) {
+                self.machines = response.data.machines;
+            }).catch(function(error) {
+
+            });
+        },
+
     },
 
     template: `

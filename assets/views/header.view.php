@@ -1,5 +1,5 @@
 <header>
     <h2>
-        <div><?=$brand;?></div>
+        <div v-html="brand">{{brand}}</div>
     </h2>
 </header>

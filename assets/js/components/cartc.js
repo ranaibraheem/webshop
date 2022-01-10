@@ -16,6 +16,10 @@ Vue.component('shoppingc', {
             type: Number,
             default: 0,
         },
+        method: {
+            default: 'POST',
+        }
+
     },
 
     created() {
@@ -29,6 +33,10 @@ Vue.component('shoppingc', {
         removeItem(index) {
             this.$root.$emit('remove-item', index)
         },
+        sentToBackEnd() {
+            this.$root.$emit('save-cart')
+        }
+
     },
 
     template: `            

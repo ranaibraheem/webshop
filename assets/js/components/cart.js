@@ -16,6 +16,9 @@ Vue.component('shopping', {
             type: Number,
             default: 0,
         },
+        method:{
+            defult: 'POST',
+        }
     },
 
     created() {
@@ -29,6 +32,11 @@ Vue.component('shopping', {
         removeMachine(index) {
             this.$root.$emit('remove-machine', index)
         },
+
+        sentToBackEnd() {
+            this.$root.$emit('save-cart')
+        }
+
     },
 
     template: `            
