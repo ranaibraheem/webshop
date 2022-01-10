@@ -24,40 +24,45 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
 </head>
 <body>
-  <nav id="app">
-            <h2>
-                <div><?=$brand;?></div>
-            </h2>
+    <main id="app">
+            <header>
+                <h2>
+                    <div v-html="brand">{{brand}}></div>
+                </h2>
+            </header>
 
-        </nav>
+        <div class="block">
+            <div class="sidenav">
+                <div id="homeNav">
+                    <div class="container-fluid navlinks">
+                        <button class="btn btn-primary" type="button"><a href="index.html" class="navlinks">cherkkoffie</a></button>
+                    </div>
 
-      <header>
-          <h1><?="$brand $desc";?></h1>
-    <h1>
-<?="$greeting $lan";?>
-<br>
-<?="$greeting $name";?>
-    </h1>
-    <div class="container-fluid navlinks">
+                    <div class="sideBtn"><a href="/coffeeMachines.html" class="btn btn-primary">Coffee Machines</a></div>
 
-    <button class="btn btn-primary" type="button"><a href="index.html" class="navlinks">cherkkoffie</a></button>
-    </div>
+                    <div class="sideBtn"><a href="/coffeeBeans.html" class="btn btn-primary">Coffee Beans</a></div>
 
-    </header>
-    <h2>Colors:</h2>
-    <ul>
-      <?php foreach ($colors as $color): ?>
-          <li><?=$color;?></li>
-      <?php endforeach;?>
-    </ul>
-    <hr>
-    <h2>Coffee</h2>
-    <ul>
-       <?php foreach ($coffees as $feature => $featureVal): ?>
-            <li><strong><?="$feature:";?></strong> <?=$featureVal;?></li>
-        <?php endforeach?>
-    </ul>
+                    <div class="sideBtn"><a href="/coffeeCups.html" class="btn btn-primary">Coffee Cups</a></div>
 
+                    <div class="sideBtn"> <a href="/signIn.html" class="btn btn-primary">LOG IN</a></div>
+
+                    <div class="sideBtn">
+                        <button class="btn btn-primary" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">More Information &#9662;
+                        </button>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#footer" style="color:#cad2c5"> Contact us</a></li>
+                                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Coffeemaker"
+                                        style="color:#cad2c5">About</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+                <img id="homeImg" src="/assets/images/coffeeGif1.gif" alt="animated coffee cup">
+        </div>
+    </main>
+    <script src="/assets/js/app.js"></script>
 </body>
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
     <p class="col-md-4 mb-0 text-muted">&copy; 2021 Cherkkoffie</p>

@@ -1,25 +1,51 @@
 <?php
-$greeting = 'Hello, ';
-$lan = 'PHP';
-$name = htmlspecialchars($_GET['name']);
 
-$colors = [
-    'Red',
-    'Blue',
-    'Green',
-];
-$colors[] = 'Pink';
-$coffees = [
-    'color' => 'brown',
-    'beans' => true,
-    'weight' => 1,
-];
-$coffees['density:'] = 'dark';
-// unset($coffees['color']);
 
-// echo '<pre>';
-// die(var_dump($coffees));
-// echo '</pre>';
-$brand = "&#x1D554;&#x1D559;&#x1D556;&#x1D563;&#x1D55C;&#x1D55C;&#x1D560;&#x1D557;&#x1D557;&#x1D55A;&#x1D556;";
-$desc = "Coffee Machines";
+// $brand = "&#x1D554;&#x1D559;&#x1D556;&#x1D563;&#x1D55C;&#x1D55C;&#x1D560;&#x1D557;&#x1D557;&#x1D55A;&#x1D556;";
+// $desc = "Coffee";
+
 require 'assets/views/index.view.php';
+
+
+// // Turn on all errors, warnings and notifications at the top of this app
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
+// require 'vendor/autoload.php';
+
+// // .env configuration
+// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+// $dotenv->load();
+
+// // Starting a server PHP session
+// session_start();
+
+// // Include core modules
+// require 'core/mysql.php';
+// require 'core/core.php';
+
+// // Throw all errors to a central error handler function
+// // This function is in core/core.php file
+// set_exception_handler('exception_handler');
+
+// if (!isAjax()) {
+//     // Load the HTML <head> section
+//     require 'assets/views/layouts/head.view.php';
+
+//     $content = [];
+
+//     require 'assets/views/header.view.php';
+
+//     // Inject code from controller
+//     require 'core/bootstrap.php';
+
+//     // Close it with the bottom end </body> and </html> tags
+//     require 'assets/views/footer.view.php';
+
+//     // Close HTML <body> and <html> section
+//     require 'assets/views/layouts/bottom.view.php';
+
+// } else {
+//     require 'core/bootstrap.php';
+// }

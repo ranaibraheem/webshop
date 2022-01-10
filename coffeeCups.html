@@ -28,14 +28,14 @@
 </head>
 
 <main id="appC">
-    <nav>
+    <header>
         <!-- <nav class="sticky-top"> -->
         <h2>
             <div v-html="brand">{{brand}}</div>
         </h2>
 
-    </nav>
-    <header>
+    </header>
+    <nav>
         <h1>
             <div v-html="title">{{title}}</div>
         </h1>
@@ -61,7 +61,7 @@
 
             <a href="/index.html" class="btn btn-primary">Home</a>
         </div>
-    </header>
+    </nav>
 
     <productsc ref="cupsComponent" :sale-30()="sale30()" :sale-50()="sale50()"></productsc>
 
