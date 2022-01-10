@@ -24,3 +24,4 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
 </head>
 <body>
+    <main id="app">
