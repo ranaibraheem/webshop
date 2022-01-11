@@ -1,9 +1,6 @@
 <div class="block">
     <div class="sidenav">
         <div id="homeNav">
-            <div class="container-fluid navlinks">
-                <button class="btn btn-primary" type="button"><a href="index.html" class="navlinks">cherkkoffie</a></button>
-            </div>
 
             <div class="sideBtn"><a href="/coffeeMachines.html" class="btn btn-primary">Coffee Machines</a></div>
 

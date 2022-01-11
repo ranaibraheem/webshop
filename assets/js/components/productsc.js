@@ -8,7 +8,7 @@ Vue.component('productsc', {
     props: {},
     created() {
         this.cupItems = cups;
-        this.getProducts();
+        // this.getProducts();
 
     },
     methods: {
@@ -16,21 +16,21 @@ Vue.component('productsc', {
             this.$root.$emit('update-cart', cup, updateType)
         },
 
-        getProducts() {
-            let self = this;
+        // getProducts() {
+        //     let self = this;
 
-            axios({
-                method: 'GET',
-                url: '?page=coffeeCups&action=getdata',
-                headers: {
-                    "X-Requested-With": "XMLHttpRequest"
-                }
-            }).then(function(response) {
-                self.cups = response.data.cups;
-            }).catch(function(error) {
+        //     axios({
+        //         method: 'GET',
+        //         url: '?page=coffeeCups&action=getdata',
+        //         headers: {
+        //             "X-Requested-With": "XMLHttpRequest"
+        //         }
+        //     }).then(function(response) {
+        //         self.cups = response.data.cups;
+        //     }).catch(function(error) {
 
-            });
-        },
+        //     });
+        // },
 
     },
 
@@ -51,11 +51,7 @@ Vue.component('productsc', {
             <p class="soldOut" v-if="cup.stock===0">Sold Out</p>
             <p class="soldOut" v-else-if="cup.stock<=5 && cup.stock>0">Almost Sold Out</p>
             <p v-else-if="cup.stock>5">In Stock</p>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
-                viewBox="0 0 16 16">
-                <path
-                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-            </svg>
+            &#x1F6D2;
             <button class="addToCart btn btn-primary" @click="updateCart(cup,'substract')"
                 :disabled="cup.stock === 0 && cup.quantity===0"
                 :class="{disabledButton: cup.stock===0 && cup.quantity===0}">-</button>

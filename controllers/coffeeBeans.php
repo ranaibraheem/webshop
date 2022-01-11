@@ -16,7 +16,7 @@ function saveCard()
     ]);
 }
 
-function getData()
+function gectData()
 {
     echo json_encode([
         'success' => true,
