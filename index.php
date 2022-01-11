@@ -1,12 +1,4 @@
 <?php
-
-
-// $brand = "&#x1D554;&#x1D559;&#x1D556;&#x1D563;&#x1D55C;&#x1D55C;&#x1D560;&#x1D557;&#x1D557;&#x1D55A;&#x1D556;";
-// $desc = "Coffee";
-
-require 'assets/views/index.view.php';
-
-
 // Turn on all errors, warnings and notifications at the top of this app
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
