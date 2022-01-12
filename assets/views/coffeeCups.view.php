@@ -1,4 +1,4 @@
-<header>
+<nav> 
         <h1>
             <div v-html="title">{{title}}</div>
         </h1>
@@ -18,12 +18,12 @@
                 aria-expanded="false">Other Products &#9662;
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="/coffeeMachines.html" style="color:#cad2c5">Coffee Machines</a></li>
-                <li><a class="dropdown-item" href="/coffeeBeans.html" style="color:#cad2c5">Coffee Beans</a></li>
+                <li><a class="dropdown-item" href="/indexMachines.php" style="color:#cad2c5">Coffee Machines</a></li>
+                <li><a class="dropdown-item" href="/indexBeans.php" style="color:#cad2c5">Coffee Beans</a></li>
             </ul>
 
-            <a href="/index.html" class="btn btn-primary">Home</a>
+            <a href="/index.php" class="btn btn-primary">Home</a>
         </div>
-    </header>
+</nav>
 
-    <productsc ref="cupsComponent" :sale-30()="sale30()" :sale-50()="sale50()"></productsc>
+<productsc ref="cupsComponent" :sale-30()="sale30()" :sale-50()="sale50()"></productsc>

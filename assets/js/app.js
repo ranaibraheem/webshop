@@ -1,7 +1,7 @@
-// // Set config defaults when creating the instance
+// Set config defaults when creating the instance
 // const instance = axios.create();
   
-// // Alter defaults after instance has been created
+// Alter defaults after instance has been created
 // instance.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 
@@ -17,6 +17,7 @@ var app = new Vue({
 		machine_filter: 'all',
 		totalPrice: 0,
 		totalQuantity: 0,
+		// axiosInstance: '',
 	},
 
 	created() {
@@ -107,10 +108,10 @@ var app = new Vue({
 		// saveToBackEnd() {
         //     let form = new FormData
 
-        //     form.append('products', JSON.stringify(this.products))
+        //     form.append('machines', JSON.stringify(this.machines))
             
         //     // Header must be set to tell back-end that this is an Ajax call
-        //     axios.post('?page=home&action=savecard', form, {
+        //     axios.post('?page=coffeeMachines&action=savecard', form, {
         //         headers: {
         //             "X-Requested-With": "XMLHttpRequest"
         //         }
