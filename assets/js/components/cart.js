@@ -33,10 +33,6 @@ Vue.component('shopping', {
             this.$root.$emit('remove-machine', index)
         },
 
-        // sentToBackEnd() {
-        //     this.$root.$emit('save-cart')
-        // }
-        
     },
 
     template: `            
