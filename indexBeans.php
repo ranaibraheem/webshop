@@ -1,6 +1,6 @@
 <?php
 
-    require 'core/core.php';
+    // require 'core/core.php';
 
     // Load the HTML <head> section
     require 'assets/views/layouts/head3.view.php';
