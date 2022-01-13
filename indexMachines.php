@@ -1,5 +1,5 @@
 <?php
-    require 'core/core.php';
+    // require 'core/core.php';
 
 
     // Load the HTML <head> section
@@ -11,6 +11,8 @@
     // require 'core/core.php';
 
     require 'assets/views/coffeeMachines.view.php';
+
+    // require 'core/core.php';
 
     // Close it with the bottom end </body> and </html> tags
     require 'assets/views/footer.view.php';
