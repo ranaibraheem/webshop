@@ -1,25 +1,98 @@
 <?php
-$greeting = 'Hello, ';
-$lan = 'PHP';
-$name = htmlspecialchars($_GET['name']);
 
-$colors = [
-    'Red',
-    'Blue',
-    'Green',
-];
-$colors[] = 'Pink';
-$coffees = [
-    'color' => 'brown',
-    'beans' => true,
-    'weight' => 1,
-];
-$coffees['density:'] = 'dark';
-// unset($coffees['color']);
+require 'vendor/autoload.php';
 
-// echo '<pre>';
-// die(var_dump($coffees));
-// echo '</pre>';
-$brand = "&#x1D554;&#x1D559;&#x1D556;&#x1D563;&#x1D55C;&#x1D55C;&#x1D560;&#x1D557;&#x1D557;&#x1D55A;&#x1D556;";
-$desc = "Coffee Machines";
-require 'assets/views/index.view.php';
+// .env configuration
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Starting a server PHP session
+session_start();
+
+// Include core modules
+require 'core/mysql.php';
+require 'core/core.php';
+
+// Throw all errors to a central error handler function
+// This function is in core/core.php file
+set_exception_handler('exception_handler');
+
+if (!isAjax()) {
+    // Load the HTML <head> section
+    require 'assets/views/layouts/head.view.php';
+
+    $content = [];
+
+    require 'assets/views/header.view.php';
+
+    // Inject code from controller
+    require 'core/bootstrap.php';
+
+    // Close it with the bottom end </body> and </html> tags
+    require 'assets/views/footer.view.php';
+
+    // Close HTML <body> and <html> section
+    require 'assets/views/layouts/bottom.view.php';
+
+} else {
+    require 'core/bootstrap.php';
+}
+
+
+require 'functions.php';
+require 'connection.php';
+require 'queryBuilder.php';
+// $pdo =connectToDb();
+$pdo = connection::make();
+
+var_dump(fetchMachines($pdo));
+
+var_dump(fetchCups($pdo));
+
+var_dump(fetchBeans($pdo));
+var_dump(fetchUsers($pdo));
+
+// $fistItem = new queryBuilder($pdo);
+// $firstMachine = $firstItem->selectFirstItem('machines');
+// var_dump($firstMachine);
+
+
+// $dsn ='mysql:host=127.0.0.1; dbname=webshop'; //$dsn data source name
+// $user = 'root';
+// $pass ='Gorella1!';
+
+// try{
+//     $pdo = new PDO($dsn, $user, $pass);
+//     echo 'connected';
+// }
+// catch(PDOException $e){
+//     echo 'Failed' .$e->getMessage();
+// };
+
+// echo "<pre>";
+// $statement = $pdo->prepare('select * from machines');
+// $statement->execute();
+// $machine = $statement->fetchAll(PDO::FETCH_OBJ);
+// var_dump($machine[1]->name);
+// echo "</pre>";
+
+// echo "<pre>";
+// $statement2 = $pdo->prepare('select * from cups');
+// $statement2->execute();
+// $cup = $statement2->fetchAll(PDO::FETCH_OBJ);
+// var_dump($cup[0]->name);
+// echo "</pre>";
+
+// echo "<pre>";
+// $statement3 = $pdo->prepare('select * from beans where id=2');
+// $statement3->execute();
+// $bean = $statement3->fetchAll(PDO::FETCH_OBJ);
+// var_dump($bean);
+// echo "</pre>";
+
+// echo "<pre>";
+// $statement = $pdo->prepare('select * from machines');
+// $statement->execute();
+// $machine = $statement->fetchAll(PDO::FETCH_CLASS, 'machineClass');
+// var_dump($machine[1]->name);
+// echo "</pre>";
