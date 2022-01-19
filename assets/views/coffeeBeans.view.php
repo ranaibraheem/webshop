@@ -19,7 +19,7 @@
             aria-expanded="false">Other Products &#9662;
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="/indexMachines.php" style="color:#cad2c5">Coffee Machines</a></li>
+            <li><a class="dropdown-item" href="/?page=coffeeMachines" style="color:#cad2c5">Coffee Machines</a></li>
             <li><a class="dropdown-item" href="/indexCups.php" style="color:#cad2c5">Coffee Cups</a></li>
         </ul>
 
