@@ -327,7 +327,7 @@ function seedTable() {
     foreach ($cups as $cup) {
         $cup['created_at'] = date('Y-m-d H:i:s');
 
-        insert($cup, 'webshop');
+        insert($cup, 'cups');
     }
 
 }

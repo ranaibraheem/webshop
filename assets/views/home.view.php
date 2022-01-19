@@ -2,13 +2,15 @@
     <div class="sidenav">
         <div id="homeNav">
 
-            <div class="sideBtn"><a href="/indexMachines.php" class="btn btn-primary">Coffee Machines</a></div>
+            <div class="sideBtn"><a href="/?page=coffeeMachines" class="btn btn-primary">Coffee Machines</a></div>
 
-            <div class="sideBtn"><a href="/indexBeans.php" class="btn btn-primary">Coffee Beans</a></div>
+            <div class="sideBtn"><a href="/index-beans.php" class="btn btn-primary">Coffee Beans</a></div>
 
-            <div class="sideBtn"><a href="/indexCups.php" class="btn btn-primary">Coffee Cups</a></div>
+            <div class="sideBtn"><a href="/index-cups.php" class="btn btn-primary">Coffee Cups</a></div>
 
-            <div class="sideBtn"> <a href="/indexSignIn.php" class="btn btn-primary">LOG IN</a></div>
+            <div class="sideBtn"> <a href="/?page=login" class="btn btn-primary">LOG IN</a></div>
+
+            <div class="sideBtn"> <a href="/?page=register" class="btn btn-primary">Register</a></div>
 
             <div class="sideBtn">
                 <button class="btn btn-primary" type="button" id="dropdownMenuButton1"

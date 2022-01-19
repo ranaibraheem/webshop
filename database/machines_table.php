@@ -402,6 +402,6 @@ function seedTable() {
     foreach ($machines as $machine) {
         $machine['created_at'] = date('Y-m-d H:i:s');
 
-        insert($machine, 'webshop');
+        insert($machine, 'machines');
     }
 }

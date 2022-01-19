@@ -41,3 +41,62 @@ if (!isAjax()) {
 } else {
     require 'core/bootstrap.php';
 }
+
+
+require 'functions.php';
+require 'connection.php';
+require 'queryBuilder.php';
+// $pdo =connectToDb();
+$pdo = connection::make();
+
+var_dump(fetchMachines($pdo));
+
+var_dump(fetchCups($pdo));
+
+var_dump(fetchBeans($pdo));
+var_dump(fetchUsers($pdo));
+
+// $fistItem = new queryBuilder($pdo);
+// $firstMachine = $firstItem->selectFirstItem('machines');
+// var_dump($firstMachine);
+
+
+// $dsn ='mysql:host=127.0.0.1; dbname=webshop'; //$dsn data source name
+// $user = 'root';
+// $pass ='Gorella1!';
+
+// try{
+//     $pdo = new PDO($dsn, $user, $pass);
+//     echo 'connected';
+// }
+// catch(PDOException $e){
+//     echo 'Failed' .$e->getMessage();
+// };
+
+// echo "<pre>";
+// $statement = $pdo->prepare('select * from machines');
+// $statement->execute();
+// $machine = $statement->fetchAll(PDO::FETCH_OBJ);
+// var_dump($machine[1]->name);
+// echo "</pre>";
+
+// echo "<pre>";
+// $statement2 = $pdo->prepare('select * from cups');
+// $statement2->execute();
+// $cup = $statement2->fetchAll(PDO::FETCH_OBJ);
+// var_dump($cup[0]->name);
+// echo "</pre>";
+
+// echo "<pre>";
+// $statement3 = $pdo->prepare('select * from beans where id=2');
+// $statement3->execute();
+// $bean = $statement3->fetchAll(PDO::FETCH_OBJ);
+// var_dump($bean);
+// echo "</pre>";
+
+// echo "<pre>";
+// $statement = $pdo->prepare('select * from machines');
+// $statement->execute();
+// $machine = $statement->fetchAll(PDO::FETCH_CLASS, 'machineClass');
+// var_dump($machine[1]->name);
+// echo "</pre>";

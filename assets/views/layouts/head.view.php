@@ -24,6 +24,10 @@
     <script src="/assets/js/cups.js"></script>
     <script src="/assets/js/components/productsc.js"></script>
     <script src="/assets/js/components/cartc.js"></script>
+    <script src="/assets/js/beans.js"></script>
+    <script src="/assets/js/components/productsb.js"></script>
+    <script src="/assets/js/components/cartb.js"></script>
+
 
 
 

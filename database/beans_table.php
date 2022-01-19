@@ -312,7 +312,7 @@ function seedTable() {
     foreach ($beans as $bean) {
         $bean['created_at'] = date('Y-m-d H:i:s');
 
-        insert($bean, 'webshop');
+        insert($bean, 'beans');
     }
   
 };
