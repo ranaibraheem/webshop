@@ -1,4 +1,12 @@
-let app = new Vue({
+// Set config defaults when creating the instance
+// const instance = axios.create();
+  
+// Alter defaults after instance has been created
+// instance.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+
+
+var app = new Vue({
 	el: '#app',
 	props: {},
 	data: {
@@ -9,6 +17,7 @@ let app = new Vue({
 		machine_filter: 'all',
 		totalPrice: 0,
 		totalQuantity: 0,
+		// axiosInstance: '',
 	},
 
 	created() {
@@ -96,6 +105,24 @@ let app = new Vue({
 			}
 		},
 
+		// saveToBackEnd() {
+        //     let form = new FormData
+
+        //     form.append('machines', JSON.stringify(this.machines))
+            
+        //     // Header must be set to tell back-end that this is an Ajax call
+        //     axios.post('?page=coffeeMachines&action=savecard', form, {
+        //         headers: {
+        //             "X-Requested-With": "XMLHttpRequest"
+        //         }
+        //     }).then(function (response) {
+        //         console.log(response.data)
+        //     }).catch(function (error) {
+
+        //     })
+        // },
+
+
 		removeAll() {
 			this.shoppingCart.length = this.cart.length = 0
 			this.totalPrice = 0
@@ -161,6 +188,10 @@ let app = new Vue({
 		this.$on('update-cart', (machine, updateType) => {
 			this.addToCart(machine, updateType)
 		})
+		// this.$on('save-cart', () => {
+        //     this.saveToBackEnd()
+        // })
+
 		this.$on('remove', () => {
 			this.removeAll()
 		})
