@@ -15,7 +15,7 @@ body {
 
 #logIn {
     color: #cad2c5;
-    background-color: rgb(65, 37, 2);
+    background-color: rgba(37, 24, 1, 0.607);
     border-color: #656d4a;
     border-radius: 10px;
     margin-left: 0.5rem;
@@ -33,7 +33,7 @@ body {
 }
 
 .form-group {
-    padding: 18rem;
+    padding: 10rem;
 
 }
 

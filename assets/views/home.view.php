@@ -8,9 +8,9 @@
 
             <div class="sideBtn"><a href="/index-cups.php" class="btn btn-primary">Coffee Cups</a></div>
 
-            <div class="sideBtn"> <a href="/?page=login" class="btn btn-primary">LOG IN</a></div>
+            <span class="sideBtn"> <a href="/?page=login" class="btn btn-primary">Login</a></span>
 
-            <div class="sideBtn"> <a href="/?page=register" class="btn btn-primary">Register</a></div>
+            <span class="sideBtn"> <a href="/?page=register" class="btn btn-primary">Register</a></span>
 
             <div class="sideBtn">
                 <button class="btn btn-primary" type="button" id="dropdownMenuButton1"
