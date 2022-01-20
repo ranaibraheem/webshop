@@ -1,5 +1,4 @@
 <?php
-// require "assets/views/register.view.php";
 
 function index($view)
 {

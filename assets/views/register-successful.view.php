@@ -1,0 +1,1 @@
+<h1>Register was successful</h1>
