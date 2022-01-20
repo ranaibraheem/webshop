@@ -1,3 +1,5 @@
+<button class= "btn btn-primary" style="margin-left:55rem"><a href="?page=home" style="color:beige; font-size:2rem">Home</a></button>
+
 <div class="form-group">
             <form method="POST" action="?page=register&action=store" id="logIn" class="row g-3">
                 <div class="col-md-6">
@@ -21,8 +23,7 @@
                 <div class="col-12">
                     <button type="submit" value="save" class="btn btn-primary">Save</button>
                 </div>
-
             </form>
-
         </div>
     </div>
+
