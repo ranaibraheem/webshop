@@ -24,7 +24,7 @@
 
     <div class="row mt-5">
         <div class="col-md-12">
-            <a href="?page=user&function=edit&id=<?= $user['id'] ?>">
+            <a href="?page=user&action=edit&id=<?= $user['id'] ?>">
                 <button>Edit user</button>
             </a>
         </div>
