@@ -1,1 +1,1 @@
-<h1>Register was successful</h1>
+<h2>Register was successful</h2>

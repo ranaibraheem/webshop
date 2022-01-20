@@ -10,6 +10,7 @@ function login()
     $query = "SELECT * FROM `users` WHERE `email`='" . $_POST['email'] . "'";
     $result = query($query);
     $data = $result->fetch(PDO::FETCH_ASSOC);
-
+    header('Location: /?page=home&action=loginSuccessful');
     dd($_POST['password'], password_verify($_POST['password'], $data['password']));
+
 }

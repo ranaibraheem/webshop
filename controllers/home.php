@@ -7,6 +7,10 @@ function index($view)
 
 function registerSuccessful()
 {
-    return require $_SERVER['DOCUMENT_ROOT'] . '/assets/views/register-succful.view.php';
+    return require $_SERVER['DOCUMENT_ROOT'] . '/assets/views/register-successful.view.php';
+}
+function loginSuccessful()
+{
+    return require $_SERVER['DOCUMENT_ROOT'] . '/assets/views/login-successful.view.php';
 }
 

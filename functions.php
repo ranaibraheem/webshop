@@ -13,7 +13,7 @@
 function fetchMachines($pdo)
 {
     echo "<pre>";
-    $statement = $pdo->prepare('select name from machines');
+    $statement = $pdo->prepare('select name from machines where id = 1');
     $statement->execute();
     $machine = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $machine;
