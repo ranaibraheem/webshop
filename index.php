@@ -50,7 +50,6 @@ require 'connection.php';
 require 'queryBuilder.php';
 // $pdo =connectToDb();
 $pdo = connection::make();
-
 var_dump(fetchMachines($pdo));
 
 var_dump(fetchCups($pdo));

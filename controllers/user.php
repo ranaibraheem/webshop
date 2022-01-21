@@ -1,5 +1,4 @@
 <?php
-
 require_once 'models/user-model.php';
 
 /**
@@ -58,6 +57,8 @@ function updateUser() {
     }
 
     update($_POST, 'users', $userId);
+    header('Location: /?page=home&action=updateSuccessful');
+
 }
 
 /**
@@ -66,7 +67,7 @@ function updateUser() {
  */
 function edit() {
     $userId = getUserIdFromUrl();
-
+    
     $user = getSingleUser($userId);
 
     return require_once $_SERVER['DOCUMENT_ROOT'] . '/assets/views/users/edit.view.php';   
