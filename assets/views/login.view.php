@@ -11,10 +11,9 @@
                     <label for="inputPassword4" class="label">Password</label>
                     <input type="password" name="password" class="form-control" id="inputPassword4" required>
                 </div>
-                <div class="col-12">
+                <div class="col-md-1">
                     <button type="submit" class="btn btn-primary">Log in</button>
                 </div>
-
             </form>
         </div>
     </div>

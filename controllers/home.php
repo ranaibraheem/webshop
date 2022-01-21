@@ -13,4 +13,8 @@ function loginSuccessful()
 {
     return require $_SERVER['DOCUMENT_ROOT'] . '/assets/views/login-successful.view.php';
 }
+function updateSuccessful()
+{
+    return require $_SERVER['DOCUMENT_ROOT'] . '/assets/views/update-successful.view.php';
+}
 

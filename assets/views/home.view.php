@@ -13,6 +13,10 @@
             <span class="sideBtn"> <a href="/?page=register" class="btn btn-primary">Register</a></span>
 
             <div class="sideBtn">
+                <button type="bottom" class="btn btn-primary"><a style="color:#cad2c5" href="?page=user&action=edit&id=">Edit Account</a></button>
+            </div>
+
+            <div class="sideBtn">
                 <button class="btn btn-primary" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">More Information &#9662;
                 </button>
