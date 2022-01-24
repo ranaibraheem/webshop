@@ -19,6 +19,18 @@
         <div class="col-md-6">
             <label for="inputPassword4" class="label">Password</label>
             <input type="password" name="password" class="form-control" id="inputPassword4" required>
+            <input type="checkbox" onclick="myFunction()">Show
+            <script>
+            function myFunction() {
+                var x = document.getElementById("inputPassword4");
+                if (x.type === "password") {
+                x.type = "text";
+                } else {
+                x.type = "password";
+                }
+            }
+            </script>
+
         </div>
         <div class="col-12">
             <button type="submit" value="save" class="btn btn-primary">Save</button>
