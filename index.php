@@ -50,12 +50,14 @@ require 'connection.php';
 require 'queryBuilder.php';
 // $pdo =connectToDb();
 $pdo = connection::make();
-var_dump(fetchMachines($pdo));
+// var_dump(fetchMachines($pdo));
 
-var_dump(fetchCups($pdo));
+// var_dump(fetchCups($pdo));
 
-var_dump(fetchBeans($pdo));
-var_dump(fetchUsers($pdo));
+// var_dump(fetchBeans($pdo));
+// var_dump(fetchUsers($pdo));
+
+
 
 // $fistItem = new queryBuilder($pdo);
 // $firstMachine = $firstItem->selectFirstItem('machines');

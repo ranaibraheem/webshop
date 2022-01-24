@@ -19,7 +19,7 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="/?page=coffeeMachines" style="color:#cad2c5">Coffee Machines</a></li>
-                <li><a class="dropdown-item" href="/indexBeans.php" style="color:#cad2c5">Coffee Beans</a></li>
+                <li><a class="dropdown-item" href="/index-beans.php" style="color:#cad2c5">Coffee Beans</a></li>
             </ul>
 
             <a href="/index.php" class="btn btn-primary">Home</a>

@@ -42,7 +42,7 @@ function fetchBeans($pdo)
 function fetchUsers($pdo)
 {
     echo "<pre>";
-    $statement4 = $pdo->prepare('select * from users');
+    $statement4 = $pdo->prepare('select first_name from users');
     $statement4->execute();
     $user = $statement4->fetchAll(PDO::FETCH_OBJ);
     return $user;
