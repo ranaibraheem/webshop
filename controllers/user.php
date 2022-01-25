@@ -48,17 +48,25 @@ function store() {
  */
 function updateUser() {
     $userId = getUserIdFromUrl();
-
     $password = trim($_POST['password']);
-    if (empty($password)) {
+    $confirm_password = trim($_POST['confirm_password']);
+
+    if (empty($password) || empty($confirm_password)) {
         unset($_POST['password']);
+        unset($_POST['confirm_password']);
     } else {
         $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $_POST['confirm_password'] = password_hash($_POST['confirm_password'], PASSWORD_DEFAULT);
     }
 
-    update($_POST, 'users', $userId);
-    header('Location: /?page=home&action=updateSuccessful');
-
+    if ($password === $confirm_password) {
+        $_POST['updated_at']=date('Y-m-d H:i:s');
+        update($_POST, 'users', $userId);
+        header('Location: /?page=home&action=updateSuccessful');
+    }
+     else {
+        header('Location: /?page=home&action=updatePasswordNotMatch');
+    }
 }
 
 /**
