@@ -27,11 +27,6 @@
     <script src="/assets/js/beans.js"></script>
     <script src="/assets/js/components/productsb.js"></script>
     <script src="/assets/js/components/cartb.js"></script>
-
-
-
-
-
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
 </head>
 <body>
