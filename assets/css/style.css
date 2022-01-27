@@ -1,13 +1,13 @@
-body {
+/* body {
     display: block;
     margin: auto;
     padding: 0px;
     border: solid lightgrey 1px;
     background-image: url('/assets/images/bodybg.jpg');
-}
+} */
 
 /*nav---------------------------------------------------------------------------- */
-h2 {
+/* h2 {
     font-size: 3em;
     color: #370617;
     text-align: center;
@@ -28,9 +28,9 @@ header {
     padding-bottom: 1rem;
     text-align: center;
 }
-
+ */
 /* links in nav */
-.navlinks a {
+/* .navlinks a {
     color: #cad2c5;
     font-size: 1em;
     font-weight: bold;
@@ -101,9 +101,9 @@ option {
     cursor: pointer;
     padding: 2rem;
 }
-
+ */
 /*-header-----------------------------------------------------------------------------*/
-h1 {
+/* h1 {
     color: rgb(245, 240, 216);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
@@ -150,11 +150,11 @@ nav {
 
 .soldOut {
     color: red;
-}
+} */
 
 
 /* cards--------------------------------------------------------------------------------*/
-.card {
+/* .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.411);
     transition: 0.3s;
     width: 20rem;
@@ -165,10 +165,10 @@ nav {
     padding: 1em;
     font-weight: bold;
     display: grid;
-}
+} */
 
 /*cards buttons*/
-.image-link {
+/* .image-link {
     color: #cad2c5;
     background-color: #414833;
     border-color: #656d4a;
@@ -213,10 +213,10 @@ a.image-link {
 
 .badge badge-light {
     background-color: #fff1e6;
-}
+} */
 
 /* image in the card */
-img {
+/* img {
     border-radius: 20px;
 }
 
@@ -319,25 +319,15 @@ h5 {
     border-style: solid !important;
     border-radius: 10px !important;
     padding: 0.4rem;
-}
+} */
 
 /* sidebar-----------------------------------------------------------------------------*/
-.sidenav {
+/* .sidenav {
     height: auto;
-    /* Full-height: remove this if you want "auto" height */
     width: 200px;
-    /* Set the width of the sidebar */
-    /* position: fixed; */
-    /* Fixed Sidebar (stay in place on scroll) */
-    /* z-index: 1; */
-    /* Stay on top */
-    /* top: 0; */
-    /* Stay at the top */
     left: 0;
     background-color: #fff1e69d;
-    /* Black */
     overflow-x: hidden;
-    /* Disable horizontal scroll */
     padding-top: 20px;
     border-radius: 10px;
     margin-right: 3rem;
@@ -346,22 +336,22 @@ h5 {
 .sideBtn {
     margin-top: 4rem;
     margin-bottom: 4rem;
-}
+} */
 
 
 /* footer------------------------------------------------------------------------------*/
 /*the footer stays onL*/
-#footer {
+/* #footer {
     bottom: 0;
     height: 90px;
     margin-top: 100px;
     margin-bottom: 0;
     background-color: #f2e9e4;
     border-radius: 10px;
-}
+} */
 
 /*facebook, instagram, twitter*/
-.fa {
+/* .fa {
     width: 30px;
     height: 30px;
     padding: 5px;
@@ -388,10 +378,10 @@ h5 {
 
 .nav-item {
     font-size: 20px;
-}
+} */
 
 /*home page-----------------------------------------------------------------------------*/
-#homeNav {
+/* #homeNav {
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 0.5rem;
@@ -402,10 +392,10 @@ h5 {
     width: 1500px;
     height: 900px;
     opacity: 0.5;
-}
+} */
 
 /* log in-------------------------------------------------------------------------------*/
-#login{
+/* #login{
     border:#2e401c solid;
     background-color: #f2e9e4;
     padding:2rem;
@@ -433,8 +423,26 @@ h5 {
 .fixlink:focus{
     color:#2e401c;
 }
+.fixlink2{
+    color: black;
+    font-size: 1rem;
+    text-align:center;
+}
+.fixlink2:hover,
+.fixlink2:focus{
+    color:#cad2c5;
+}
+
+#detail{
+    background-color: rgba(82, 82, 82, 0.726) !important;
+    border-style: solid !important;
+    border-radius: 10px !important;
+    padding: 8rem;
+    margin-left:1rem;
+} */
+
 /* responsive --------------------------------------------------------------------------*/
-@media (min-width:901px) and (max-width:1750px) {
+/* @media (min-width:901px) and (max-width:1750px) {
     #homeImg {
         width: 650px;
         height: 550px;
@@ -514,10 +522,10 @@ h5 {
         text-align: center;
         padding-top: 0;
         padding-bottom: 0.2rem;
-    }
+    } */
 
     /*facebook, instagram, twitter*/
-    .fa {
+    /* .fa {
         width: 30px;
         height: 30px;
         padding: 4px;
@@ -533,7 +541,7 @@ h5 {
     .text-muted {
         font-size: 15px;
     }
-}
+} */
 
 /*informations--------------------------------------------------------------------------------------*/
 

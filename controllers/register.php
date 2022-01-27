@@ -16,9 +16,7 @@ function store()
 
     if ($_POST["password"] === $_POST["confirm_password"]) {
         insert($user, 'users');
-
         header('Location: /?page=home&action=registerSuccessful');
-
     }
      else {
         header('Location: /?page=home&action=registerPasswordNotMatch');

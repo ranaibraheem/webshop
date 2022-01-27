@@ -9,8 +9,6 @@ body {
     border-radius: 10px;
     margin: 0.5rem;
     transition: background-color 200ms ease-in-out;
-
-
 }
 
 #logIn {
@@ -20,7 +18,6 @@ body {
     border-radius: 10px;
     margin-left: 0.5rem;
     transition: background-color 200ms ease-in-out;
-
 }
 
 .btn-primary:hover,
@@ -34,28 +31,22 @@ body {
 
 .form-group {
     padding: 10rem;
-
 }
 
 @media (min-width:510px) and (max-width:1200px) {
     .form-group {
         padding: 10rem;
-
-
     }
 }
 
 @media (min-width:375px) and (max-width:510px) {
     .form-group {
         padding: 8rem;
-
     }
 }
 
 @media (max-width:375px) {
     .form-group {
         padding: 4rem;
-
     }
-
 }

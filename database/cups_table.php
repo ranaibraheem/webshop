@@ -329,5 +329,4 @@ function seedTable() {
 
         insert($cup, 'cups');
     }
-
 }

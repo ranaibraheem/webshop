@@ -24,7 +24,6 @@ function connect($dbHost = null, $dbName = null, $dbUser = null, $dbPass = null)
         print "Error!: " . $e->getMessage() . "<br/>";
         die();
     }
-
     return $dbh;
 }
 
@@ -49,9 +48,7 @@ function query($query, $executeString = array(), $dbHost = null, $dbName = null,
     } catch (\PDOException $e) {
         var_dump($e->getMessage());
     }
-
     $lastInsertedId = $dbh->lastInsertId();
-
     return $stmt;
 }
 

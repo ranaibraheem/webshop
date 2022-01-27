@@ -44,7 +44,6 @@ if (!isAjax()) {
     require 'core/bootstrap.php';
 }
 
-
 require 'functions.php';
 require 'connection.php';
 require 'queryBuilder.php';
@@ -57,12 +56,9 @@ $pdo = connection::make();
 // var_dump(fetchBeans($pdo));
 // var_dump(fetchUsers($pdo));
 
-
-
 // $fistItem = new queryBuilder($pdo);
 // $firstMachine = $firstItem->selectFirstItem('machines');
 // var_dump($firstMachine);
-
 
 // $dsn ='mysql:host=127.0.0.1; dbname=webshop'; //$dsn data source name
 // $user = 'root';

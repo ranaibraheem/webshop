@@ -29,3 +29,7 @@ function updatePasswordNotMatch()
 {
     return require $_SERVER['DOCUMENT_ROOT'] . '/assets/views/update-password-not-match.view.php';
 }
+function loginPasswordNotMatch()
+{
+    return require $_SERVER['DOCUMENT_ROOT'] . '/assets/views/login-password-not-match.view.php';
+}

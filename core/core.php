@@ -23,7 +23,6 @@ function dd()
     }
 }
 
-
 /**
  * Create an encrypted token and set the token var in the SESSION
  */
@@ -39,7 +38,6 @@ function createToken()
     return $_SESSION['token'];
 }
 
-
 /**
  * De-crypt a token and compare given token with the one in the SESSION
  * @param $token (string)
@@ -52,7 +50,6 @@ function decryptToken($token)
 
     return $token === $decryption;
 }
-
 
 /**
  * Create a HTML hidden input element with a token
