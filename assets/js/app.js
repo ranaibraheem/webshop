@@ -1,11 +1,4 @@
-// Set config defaults when creating the instance
-// const instance = axios.create();
-  
-// Alter defaults after instance has been created
-// instance.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-
-
+const bus = new Vue();
 var app = new Vue({
 	el: '#app',
 	props: {},
@@ -17,12 +10,11 @@ var app = new Vue({
 		machine_filter: 'all',
 		totalPrice: 0,
 		totalQuantity: 0,
-		// axiosInstance: '',
 	},
 
 	created() {
 		this.machines = machines
-		// this.shoppingCart = this.cart
+		this.machine = this.detailmachine
 		this.totalPrice = localStorage.getItem('totalPrice') !== null ? parseInt(localStorage.getItem('totalPrice')) : 0;
 		this.totalQuantity = localStorage.getItem('totalQuantity') !== null ? parseInt(localStorage.getItem('totalQuantity')) : 0;
 
@@ -77,7 +69,6 @@ var app = new Vue({
 								this.totalPrice -= this.machines[i].newPrice50
 							} else {
 								this.totalPrice -= this.machines[i].price
-
 							}
 							this.shoppingCart = this.cart
 							localStorage.removeItem('shoppingCart');
@@ -105,24 +96,6 @@ var app = new Vue({
 			}
 		},
 
-		// saveToBackEnd() {
-        //     let form = new FormData
-
-        //     form.append('machines', JSON.stringify(this.machines))
-            
-        //     // Header must be set to tell back-end that this is an Ajax call
-        //     axios.post('?page=coffeeMachines&action=savecard', form, {
-        //         headers: {
-        //             "X-Requested-With": "XMLHttpRequest"
-        //         }
-        //     }).then(function (response) {
-        //         console.log(response.data)
-        //     }).catch(function (error) {
-
-        //     })
-        // },
-
-
 		removeAll() {
 			this.shoppingCart.length = this.cart.length = 0
 			this.totalPrice = 0
@@ -149,7 +122,6 @@ var app = new Vue({
 				this.totalPrice -= this.shoppingCart[index].newPrice50 * this.shoppingCart[index].quantity
 			} else {
 				this.totalPrice -= this.shoppingCart[index].price * this.shoppingCart[index].quantity
-
 			}
 
 			this.shoppingCart[index].stock += this.shoppingCart[index].quantity
@@ -174,7 +146,7 @@ var app = new Vue({
 	},
 
 	mounted() {
-		if (localStorage.shoppingCart) {
+		if (localStorage.shoppingCart) {	
 			this.shoppingCart = JSON.parse(localStorage.shoppingCart);
 		}
 		this.machines.forEach(machineItem => {
@@ -188,9 +160,6 @@ var app = new Vue({
 		this.$on('update-cart', (machine, updateType) => {
 			this.addToCart(machine, updateType)
 		})
-		// this.$on('save-cart', () => {
-        //     this.saveToBackEnd()
-        // })
 
 		this.$on('remove', () => {
 			this.removeAll()
@@ -198,7 +167,6 @@ var app = new Vue({
 		this.$on('remove-machine', (index) => {
 			this.removeItem(index)
 		})
-
 	},
 
 	watch: {

@@ -96,6 +96,5 @@ function getUserIdFromUrl()
     if ($userId === 0) {
        die('Bad ID');
     }
-
     return $userId;
 }

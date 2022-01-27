@@ -13,7 +13,6 @@ let appB = new Vue({
 
     created() {
         this.beans = beans
-        // this.shoppingCart = this.cart
         this.totalPriceB = localStorage.getItem('totalPriceB') !== null ? parseInt(localStorage.getItem('totalPriceB')) : 0;
         this.totalQuantityB = localStorage.getItem('totalQuantityB') !== null ? parseInt(localStorage.getItem('totalQuantityB')) : 0;
 
@@ -68,7 +67,6 @@ let appB = new Vue({
                                 this.totalPriceB -= this.beans[i].newPrice50
                             } else {
                                 this.totalPriceB -= this.beans[i].price
-
                             }
                             this.shoppingCartB = this.cartB
                             localStorage.removeItem('shoppingCartB');
@@ -122,7 +120,6 @@ let appB = new Vue({
                 this.totalPriceB -= this.shoppingCartB[index].newPrice50 * this.shoppingCartB[index].quantity
             } else {
                 this.totalPriceB -= this.shoppingCartB[index].price * this.shoppingCartB[index].quantity
-
             }
 
             this.shoppingCartB[index].stock += this.shoppingCartB[index].quantity
@@ -167,7 +164,6 @@ let appB = new Vue({
         this.$on('remove-item', (index) => {
             this.removeItem(index)
         })
-
     },
 
     watch: {

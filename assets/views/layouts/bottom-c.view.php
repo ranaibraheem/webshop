@@ -1,5 +1,4 @@
-</main>
-    <script src="/assets/js/appC.js"></script>
-
-</body>
+        </main>
+            <script src="/assets/js/appC.js"></script>
+    </body>
 </html>

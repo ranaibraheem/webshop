@@ -6,7 +6,6 @@
                     <?= $user['id'] ?>
                 </a>
             </div>
-
             <div class="col-md-5"><?= $user['first_name'] . ' ' . $user['last_name'] ?></div>
             <div class="col-md-6"><?= $user['email'] ?></div>
         </div>
