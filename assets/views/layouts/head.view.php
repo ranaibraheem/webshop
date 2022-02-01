@@ -33,10 +33,8 @@
         <script src="/assets/js/components/cart.js"></script>
         <script src="/assets/js/cups.js"></script>
         <script src="/assets/js/components/productsc.js"></script>
-        <script src="/assets/js/components/cartc.js"></script>
         <script src="/assets/js/beans.js"></script>
         <script src="/assets/js/components/productsb.js"></script>
-        <script src="/assets/js/components/cartb.js"></script>
         <script src="/assets/js/components/detailm.js"></script>
 
         <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />

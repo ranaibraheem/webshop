@@ -29,7 +29,7 @@ const cups = [{
         show: true,
     },
     {
-        name: "brown coffee cup set",
+        name: "Brown coffee cup set",
         image: "browncoffeec.jpg",
         alt: "Photo by Valeriia Miller from Pexels",
         text: "A beautifull set of coffee cups. 2 stuks",

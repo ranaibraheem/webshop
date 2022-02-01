@@ -7,11 +7,6 @@
             :total-price="totalPrice">
         </shopping>
 
-        <select @change="filterMachine()" v-model="machine_filter" class="btn btn-primary">
-            <option selected value="all">All</option>
-            <option value="bigmachine">Big</option>
-            <option value="smallmachine">Small</option>
-        </select>
 
         <button class="btn btn-primary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
             aria-expanded="false">Other Products &#9662;
@@ -23,4 +18,4 @@
         <a href="/index.php" class="btn btn-primary">Home</a>
     </div>
 </nav>
-<detailm ref="detailmComponent" :sale-30()="sale30()" :sale-50()="sale50()"></detailm>
+<detailm ref="detailmComponent" :sale-30()="sale30()" :sale-50()="sale50()" :detailproduct="detailproduct" @detail-product()="detailm()"></detailm>
