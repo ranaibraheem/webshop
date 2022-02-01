@@ -1,66 +1,67 @@
 Vue.component('products', {
     data() {
         return {
-            machineItems: [],
+            products:[],
             imagePath: '/assets/images/webshop/',
             detailPath: '/?page=detail-machine',
         }
     },
 
     props: {
-        machine: Object,
-        detailmachine: Object,
     },
 
     created() {
-        this.machineItems = machines;
+        this.products = machines;
     },
 
     methods: {
-        updateCart(machine, updateType) {
-            this.$root.$emit('update-cart', machine, updateType)
+        updateCart(product, updateType) {
+            this.$root.$emit('update-cart', product, updateType)
         },
-        detailMachine() {
-            this.machines.forEach(machine => {
-                this.detailmachine = machine;
-            });
-            bus.$emit('detail-machine', machine);
+        detailProduct(product) {
+            this.$root.$emit('detail-product', product)
         },
     },
 
     template: `
 <section class="products block">
-    <div class="card container-fluid col-md-5" v-for="machine in machineItems" :key="machine.id" v-show="machine.show">
-        <a @click="detailMachine()" :href="detailPath">
-            <img :src="imagePath+machine.image" class="card-img-top" :alt="machine.alt" >
+    <div class="card container-fluid col-md-5" v-for="product in products" :key="product.id" v-show="product.show">
+        <a :href="imagePath + product.image">
+            <img :src="imagePath+product.image" class="card-img-top" :alt="product.alt" >
         </a>
         <div class="card-body">
-            <h5>{{machine.name}}</h5>
-            <h5>{{machine.machineNum}}</h5>
-            <p class="card-text">{{machine.text}}</p>
-            <p v-if="machine.onSale30"><b>Sale 30%</b> 
-                <span class="onSale">{{machine.price}}$</span><br>
-                <span class="newPrice30"> New Price: <b>{{machine.newPrice30}}$</b></span>
+            <h5>{{product.name}}</h5><hr>
+            
+            <p v-if="product.onSale30"><b>Sale 30%</b> 
+                <span class="onSale">{{product.price}}$</span><br>
+                <span class="newPrice30"> New Price: <b>{{product.newPrice30}}$</b></span>
             </p>
-            <p v-else-if="machine.onSale50"><b>Sale 50%</b>
-                <span class="onSale">{{machine.price}}$</span><br>
-                <span class="newPrice50"> New Price: <b>{{machine.newPrice50}}$</b></span>
+            <p v-else-if="product.onSale50"><b>Sale 50%</b>
+                <span class="onSale">{{product.price}}$</span><br>
+                <span class="newPrice50"> New Price: <b>{{product.newPrice50}}$</b></span>
             </p>
-            <p v-else>Price: {{machine.price}}$</p>
-            <p class="soldOut" v-if="machine.stock===0">Sold Out</p>
-            <p class="soldOut" v-else-if="machine.stock<=5 && machine.stock>0">Almost Sold Out</p>
-            <p v-else-if="machine.stock>5">In Stock</p>
+            <p v-else>Price: {{product.price}}$</p>
+            <p class="soldOut" v-if="product.stock===0">Sold Out</p>
+            <p class="soldOut" v-else-if="product.stock<=5 && product.stock>0">Almost Sold Out</p>
+            <p v-else-if="product.stock>5">In Stock</p>
             <span>&#x1F6D2;</span>
-            <button class="addToCart btn btn-primary" @click="updateCart(machine,'substract')"
-                :disabled="machine.stock === 0 && machine.quantity===0"
-                :class="{disabledButton: machine.stock===0 && machine.quantity===0}">-
+            <button class="addToCart btn btn-primary" @click="updateCart(product,'substract')"
+                :disabled="product.stock === 0 && product.quantity===0"
+                :class="{disabledButton: product.stock===0 && product.quantity===0}">-
             </button>
-            <span>{{machine.quantity}}</span>
-            <button class=" addToCart btn btn-primary" @click="updateCart(machine,'add')"
-                :disabled="machine.stock === 0" :class="{disabledButton: machine.stock === 0}">+
-            </button>
+            <span>{{product.quantity}}</span>
+            <button class=" addToCart btn btn-primary" @click="updateCart(product,'add')"
+                :disabled="product.stock === 0" :class="{disabledButton: product.stock === 0}">+
+            </button><hr>
+            <a :href="detailPath">
+                <button class="btn btn-primary" style="margin-left:4rem" @click="detailProduct(product)">More Details</button>
+            </a>
         </div>
     </div>
 </section>
+
     `,
 })
+
+
+ 
