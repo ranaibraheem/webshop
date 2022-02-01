@@ -133,9 +133,9 @@ Vue.component('shopping', {
                             <span>
                                 <span id="shopping">Delete:</span>
                                 <i class="fa fa-trash-o" id="deletBtn" @click=" removeProductb(index)"></i>
-                            </span>
+                            </span><hr>
                         </li>
-                    </ul><hr>
+                    </ul>
                     <h5 class="modal-title" id="staticBackdropLabel">Cups products:</h5>
                     <ul id="shoppingCart">
                         <li v-for="(productc, index) in shoppingCartC" :key="productc.id" >
