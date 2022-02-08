@@ -46,6 +46,10 @@ Vue.component('productsc', {
             <button class=" addToCart btn btn-primary" @click="updateCartc(productc,'add')"
                 :disabled="productc.stock === 0" :class="{disabledButton: productc.stock === 0}">+
             </button><hr>
+            <a>
+                <button class="btn btn-primary" style="margin-left:4rem">More Details</button>
+            </a>
+
         </div>
     </div>
 </section>

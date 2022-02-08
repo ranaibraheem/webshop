@@ -3,7 +3,7 @@
         <div v-html="title">{{title}}</div>
     </h1>
     <div class="container-fluid navlinks">
-    <select @change="filter()" v-model="filters" class="btn btn-primary">
+        <select @change="filter()" v-model="filters" class="btn btn-primary">
             <option selected value="all">All Products</option>
             <option value="machines">Machines</option>
             <option value="beans">Beans</option>
