@@ -21,7 +21,6 @@ var app = new Vue({
         totalQuantityB: 0,
 		totalPriceC: 0,
         totalQuantityC: 0,
-		detailproduct:{}
 	},
 
 	created() {
@@ -61,7 +60,6 @@ var app = new Vue({
 		cartC() {
             return this.shoppingCartC = this.productsc.filter(productc => productc.quantity > 0)
         },
-
 	},
 
 	methods: {
@@ -433,10 +431,23 @@ var app = new Vue({
                 this.productsb.forEach(element => {
                     element.show = true;
                 });
+				this.products.forEach(el => {
+					el.show =false;
+				});
+				this.productsc.forEach(ele => {
+					ele.show =false;
+				})
+
             } else {
                 this.productsb.forEach(element => {
                     element.show = element.category != this.productb_filter ? false : true;
                 });
+				this.products.forEach(el => {
+					el.show =false;
+				});
+				this.productsc.forEach(ele => {
+					ele.show =false;
+				})
             }
         },
 		filterProductc() {
@@ -444,21 +455,25 @@ var app = new Vue({
                 this.productsc.forEach(element => {
                     element.show = true;
                 });
+				this.products.forEach(el => {
+					el.show =false;
+				});
+				this.productsb.forEach(ele => {
+					ele.show =false;
+				})
+
             } else {
                 this.productsc.forEach(element => {
                     element.show = element.category != this.productc_filter ? false : true;
                 });
+				this.products.forEach(el => {
+					el.show =false;
+				});
+				this.productsb.forEach(ele => {
+					ele.show =false;
+				})
             }
         },
-
-        detailProduct(product){
-			for (let d = 0; d < this.products.length; d++) {
-				if(this.products[d].id === product.id){
-					this.detailproducts.push(this.products[d]);
-				}
-			}
-		},
-
 	},
 
 	mounted() {
@@ -520,10 +535,6 @@ var app = new Vue({
 		this.$on('remove-productc', (index) => {
             this.removeItemc(index)
         })
-
-		this.$on('detail-product', (product) => {
-			this.detailm(product)
-		})
 	},
 
 	watch: {

@@ -3,7 +3,6 @@ Vue.component('products', {
         return {
             products:[],
             imagePath: '/assets/images/webshop/',
-            detailPath: '/?page=detail-machine',
         }
     },
 
@@ -17,9 +16,6 @@ Vue.component('products', {
     methods: {
         updateCart(product, updateType) {
             this.$root.$emit('update-cart', product, updateType)
-        },
-        detailProduct(product) {
-            this.$root.$emit('detail-product', product)
         },
     },
 
@@ -53,8 +49,8 @@ Vue.component('products', {
             <button class=" addToCart btn btn-primary" @click="updateCart(product,'add')"
                 :disabled="product.stock === 0" :class="{disabledButton: product.stock === 0}">+
             </button><hr>
-            <a :href="detailPath">
-                <button class="btn btn-primary" style="margin-left:4rem" @click="detailProduct(product)">More Details</button>
+            <a>
+                <button class="btn btn-primary" style="margin-left:4rem">More Details</button>
             </a>
         </div>
     </div>
