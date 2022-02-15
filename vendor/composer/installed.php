@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'df2fd3d448c51cb6b96ad2134ceaa4b4a0928b40',
+        'reference' => 'd22c5ae26da4f8e0564040b44bb35d1325d66c0b',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'df2fd3d448c51cb6b96ad2134ceaa4b4a0928b40',
+            'reference' => 'd22c5ae26da4f8e0564040b44bb35d1325d66c0b',
             'dev_requirement' => false,
         ),
         'graham-campbell/result-type' => array(
@@ -44,6 +44,15 @@
             'install_path' => __DIR__ . '/../phpoption/phpoption',
             'aliases' => array(),
             'reference' => 'eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15',
+            'dev_requirement' => false,
+        ),
+        'plasticbrain/php-flash-messages' => array(
+            'pretty_version' => 'v1.0.1',
+            'version' => '1.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../plasticbrain/php-flash-messages',
+            'aliases' => array(),
+            'reference' => 'b565762619342057ce561de20d0f2f6e14f9aa77',
             'dev_requirement' => false,
         ),
         'psr/log' => array(

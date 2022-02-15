@@ -1,14 +1,21 @@
 <?php
+//oop:
 
-// Get page from URL
-$page = getPage();
 
-// Get action from URL
-$action = getAction();
+require 'vendor/autoload.php';
 
-if (!empty($page) && file_exists('controllers/' . $page . '.php')) {
-    require_once 'controllers/' . $page . '.php';
+// Starting a server PHP session
+session_start();
 
-    // Call function in controller
-    $action($page);
+if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/.migration')) {
+    session_destroy();
+    unlink($_SERVER['DOCUMENT_ROOT'] . '/.migration');
 }
+
+// Using the Dotenv package for using the .env and the global $_ENV
+$dotenv = \Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT']);
+$dotenv->load();
+
+// Showing 'flash' messages if one is set in the session
+$msg = new \Plasticbrain\FlashMessages\FlashMessages();
+$msg->display();
