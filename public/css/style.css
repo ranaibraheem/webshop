@@ -1,0 +1,802 @@
+/* body {
+    display: block;
+    margin: auto;
+    padding: 0px;
+    border: solid lightgrey 1px;
+    background-image: url('/public/images/bodybg.jpg');
+} */
+
+/*nav---------------------------------------------------------------------------- */
+/* h2 {
+    font-size: 3em;
+    color: #370617;
+    text-align: center;
+    padding-top: 2.5rem;
+}
+
+header {
+    background-image: url('/public/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: solid grey 2px;
+    border-radius: 20px;
+    height: 180px;
+    margin: 1em;
+}
+
+.navlinks {
+    padding-bottom: 1rem;
+    text-align: center;
+}
+ */
+/* links in nav */
+/* .navlinks a {
+    color: #cad2c5;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.navlinks a:hover {
+    color: #2e401c;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#username {
+    background-color: #eae0d5;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+#password {
+    background-color: #eae0d5;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+
+.dropdown-menu {
+    background-color: #414833;
+    padding: 0;
+    margin: 0;
+}
+
+.dorpdown-item {
+    background-color: #414833;
+    border-color: #656d4a;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(255, 81, 0);
+    border-color: #656d4a;
+    cursor: pointer;
+}
+
+#shopping {
+    color: darkred;
+    font-weight: bold;
+    padding-left: 1rem;
+    padding-right: 0.7rem;
+}
+
+#deletBtn {
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#shoppingCart {
+    padding: 1.5rem;
+}
+
+#cartBorder {
+    border-radius: 1rem;
+    background-color: #eae0d5;
+}
+
+option {
+    color: #cad2c5;
+    background-color: #414833;
+    border-color: #656d4a;
+    text-align: left;
+    cursor: pointer;
+    padding: 2rem;
+}
+ */
+/*-header-----------------------------------------------------------------------------*/
+/* h1 {
+    color: rgb(245, 240, 216);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 2em;
+    padding: 1rem;
+}
+
+nav {
+    border: lightgrey solid 2px;
+    background-color: rgb(110, 77, 36);
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 1em;
+}
+
+.basket {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.411);
+    transition: 0.3s;
+    background-color: #f2e9e4;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+#cart {
+    display: block;
+    font-size: 1rem;
+    color: #cad2c5;
+}
+
+#cart:hover {
+    color: #2e401c;
+}
+
+#remove {
+    display: block;
+    color: #cad2c5;
+}
+
+#remove:hover {
+    color: #2e401c;
+}
+
+.soldOut {
+    color: red;
+} */
+
+
+/* cards--------------------------------------------------------------------------------*/
+/* .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.411);
+    transition: 0.3s;
+    width: 20rem;
+    margin: 2rem;
+    background-color: #f2e9e4;
+    border-radius: 20px;
+    float: left;
+    padding: 1em;
+    font-weight: bold;
+    display: grid;
+} */
+
+/*cards buttons*/
+/* .image-link {
+    color: #cad2c5;
+    background-color: #414833;
+    border-color: #656d4a;
+    border-radius: 10px;
+    margin-right: 0.5rem;
+    transition: background-color 200ms ease-in-out;
+}
+
+.image-link:hover,
+.image-link:focus {
+    color: #2e401c;
+    background-color: #bfab67;
+    border-color: #656d4a;
+    border-radius: 50px;
+    transition: 2s;
+}
+
+a.image-link {
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    color: #cad2c5;
+    background-color: #414833;
+    border-color: #656d4a;
+    border-radius: 10px;
+    margin-left: 0.5rem;
+    transition: background-color 200ms ease-in-out;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    color: #2e401c;
+    background-color: #bfab67;
+    border-color: #656d4a;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 60px 100px 0 rgb(0, 0, 0);
+    transform: translateY(-0.20em);
+}
+
+.badge badge-light {
+    background-color: #fff1e6;
+} */
+
+/* image in the card */
+/* img {
+    border-radius: 20px;
+}
+
+.card-img,
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card-text {
+    color: grey;
+    width: 200px;
+    height: 90px;
+}
+
+.card:hover {
+    box-shadow: 0 60px 100px 0 rgba(36, 20, 20, 0.918);
+    background-color: rgb(65, 37, 2);
+    color: rgb(245, 240, 216);
+    border-radius: 30px;
+    transition: 1s;
+    transform: translateY(-0.25em);
+}
+
+a {
+    text-decoration: none;
+}
+
+h5 {
+    color: black;
+}
+
+.card:hover h5 {
+    color: white;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.total-quantity {
+    text-align: center;
+    font-weight: bold;
+}
+
+.disabledButton {
+    color: #2e401c;
+    background-color: #bfab67 !important;
+    border-color: #656d4a;
+    border-radius: 50px;
+}
+
+.onSale {
+    position: relative;
+    color: grey;
+}
+
+.onSale:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 2px solid;
+    border-color: rgba(243, 0, 0, 0.671);
+
+
+    -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+
+.newPrice30 {
+    color: rgb(0, 149, 137);
+    font-weight: bold;
+}
+
+.newPrice50 {
+    color: rgb(0, 98, 190);
+    font-weight: bold;
+}
+
+
+
+#border {
+    border-color: lightgrey;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+#saleBorder {
+    border-color: rgba(0, 121, 111, 0.15) !important;
+    border-style: solid !important;
+    border-radius: 10px !important;
+    padding: 0.4rem;
+} */
+
+/* sidebar-----------------------------------------------------------------------------*/
+/* .sidenav {
+    height: auto;
+    width: 200px;
+    left: 0;
+    background-color: #fff1e69d;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-radius: 10px;
+    margin-right: 3rem;
+}
+
+.sideBtn {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+} */
+
+
+/* footer------------------------------------------------------------------------------*/
+/*the footer stays onL*/
+/* #footer {
+    bottom: 0;
+    height: 90px;
+    margin-top: 100px;
+    margin-bottom: 0;
+    background-color: #f2e9e4;
+    border-radius: 10px;
+} */
+
+/*facebook, instagram, twitter*/
+/* .fa {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+    color: white;
+    border-radius: 10%;
+    display: inline-block;
+}
+
+.fa-facebook {
+    background: #3B5998;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+}
+
+.fa-instagram {
+    background: #d55d92;
+}
+
+.nav-item {
+    font-size: 20px;
+} */
+
+/*home page-----------------------------------------------------------------------------*/
+/* #homeNav {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+#homeImg {
+    background-size: 100% 100%;
+    width: 1500px;
+    height: 900px;
+    opacity: 0.5;
+} */
+
+/* log in-------------------------------------------------------------------------------*/
+/* #login{
+    border:#2e401c solid;
+    background-color: #f2e9e4;
+    padding:2rem;
+    padding-bottom:4rem;
+    border-radius: 10px;
+    margin:4rem;
+}
+
+#register{
+    border:#2e401c solid;
+    background-color: #f2e9e4;
+    padding:2rem;
+    padding-bottom:4rem;
+    border-radius: 10px;
+    margin-top:4rem;
+    margin-bottom:4rem;
+    
+}
+.fixlink{
+    color: #cad2c5;
+    font-size: 1rem;
+    text-align:center;
+}
+.fixlink:hover,
+.fixlink:focus{
+    color:#2e401c;
+}
+.fixlink2{
+    color: black;
+    font-size: 1rem;
+    text-align:center;
+}
+.fixlink2:hover,
+.fixlink2:focus{
+    color:#cad2c5;
+}
+
+#detail{
+    background-color: rgba(82, 82, 82, 0.726) !important;
+    border-style: solid !important;
+    border-radius: 10px !important;
+    padding: 8rem;
+    margin-left:1rem;
+} */
+
+/* responsive --------------------------------------------------------------------------*/
+/* @media (min-width:901px) and (max-width:1750px) {
+    #homeImg {
+        width: 650px;
+        height: 550px;
+    }
+}
+
+@media (min-width:509px) and (max-width:900px) {
+    #homeImg {
+        background-size: 100% 100%;
+        width: 350px;
+        height: 250px
+    }
+
+}
+
+@media (min-width:375px) and (max-width:510px) {
+    h2 {
+        font-size: 2em;
+        padding-bottom: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #homeImg {
+        background-size: 100% 100%;
+        width: 400px;
+        height: 350px
+    }
+
+    #homeNav {
+        text-align: center;
+        padding-top: 0.2rem;
+        padding-bottom: 0.25rem;
+    }
+
+
+}
+
+@media (max-width:375px) {
+    h2 {
+        font-size: 2em;
+        padding-bottom: 0.5rem;
+    }
+
+    h1 {
+        font-size: 0.7em;
+    }
+
+    .navlinks a {
+        font-size: 0.5em;
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        margin-left: 0.5rem;
+        transition: background-color 200ms ease-in-out;
+        -ms-text-size-adjust: auto;
+    }
+
+    #footer {
+        height: 90px;
+    }
+
+    option {
+        font-size: 0.5rem;
+    }
+
+    #homeImg {
+        background-size: 100% 100%;
+        width: 300px;
+        height: 250px
+    }
+
+    #homeNav {
+        text-align: center;
+        padding-top: 0;
+        padding-bottom: 0.2rem;
+    } */
+
+    /*facebook, instagram, twitter*/
+    /* .fa {
+        width: 30px;
+        height: 30px;
+        padding: 4px;
+        font-size: 25px;
+        margin: 4px 4px;
+    }
+
+    .nav-item {
+        font-size: 15px;
+
+    }
+
+    .text-muted {
+        font-size: 15px;
+    }
+} */
+
+/*informations--------------------------------------------------------------------------------------*/
+
+/* picture information: */
+/* card pictures size: 700 1000 */
+/*background picture size: 2000 300*/
+
+/* background:
+Photo by Maria Orlova from Pexels*/
+
+/* bodybg:
+Photo by Monstera from Pexels */
+
+
+/*simpleCoffeM: CM357e 
+Photo by mentatdgt from Pexels
+
+profitionalcoffeem: CM359e
+Photo by Eka Sutrisno from Pexels
+
+freshcoffeem: CM356f
+Photo by Matt Jerome Connor from Pexels
+
+
+filtercoffeem: CM352f
+Photo by Thirdman from Pexels
+
+
+easycoffeem: CM363f
+Photo by Ketut Subiyanto from Pexels
+
+silvercoffeem: CM365f
+Photo by Karolina Grabowska from Pexels
+
+smallcoffeem: CM368e
+Photo by Hiago Italo from Pexels
+
+takeawaycoffeem: CM369e
+Photo by Taryn Elliott from Pexels
+
+handycoffeem: CM363e
+Photo by Maria Orlova from Pexels
+
+soprofitionalcoffeem: CM370f
+Photo by Ivan Samkov from Pexels
+
+everydaycoffeem: CM373e
+Photo by Cleyder Duque from Pexels
+
+moderncoffeem: CM377f
+Photo by Jonathan Borba from Pexels
+
+arabiccoffeem: CM378e
+Photo by Svetlana Ponomareva from Pexels
+
+supereasycoffeem: CM371e
+Photo by Michaela S. from Pexels
+
+
+superprofitionalcoffeem: CM380f
+Photo by Pavel Danilyuk from Pexels
+
+
+worktimecoffeem: CM490e
+Photo by Pavel Danilyuk from Pexels
+
+timeoutcoffeem: CM495e
+Photo by Rachel Claire from Pexels
+
+nicecoffeem: CM494e
+Photo by Lynnelle Richardson from Pexels
+
+coffeeloverscoffeem: CM483e
+Photo by Clam Lo from Pexels
+
+cappuccinoloverscoffeem: CM400f
+Photo by Pavel Danilyuk from Pexels
+
+cappuccinoprofitinalcoffeem: CM402f
+Photo by Lisa from Pexels
+
+espressocoffeem: CM410f
+Photo by Sander Dalhuisen from Pexels
+
+tastycoffeem:CM501m
+Photo by Ida Bagus Anggarama from Pexels
+
+smallcappuccinocoffeem: CM512m
+Photo by Noah Frohn from Pexels
+
+tinycoffeem: CM514m
+Photo by Tim Douglas from Pexels
+
+uniccoffeem: CM911m
+Photo by Georgi Petrov from Pexels*/
+
+
+/*responsive block
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+ */
+
+/* blur image:
+ filter: blur(8px);
+ -webkit-filter: blur(8px); */
+
+
+
+
+
+
+
+
+/* blackcoffeec: 
+Photo by Chevanon Photography from Pexels */
+
+/* nicebrowncoffeec:
+Photo by Pelageia Zelenina from Pexels */
+
+/* browncoffeec:
+Photo by Valeriia Miller from Pexels */
+
+/* whitecoffeec: 
+Photo by Alin Luna from Pexels */
+
+/* greycoffeec:
+Photo by Vitaly Vlasov from Pexels */
+
+/* nicecoffeec:
+Photo by Marta Dzedyshko from Pexels */
+
+/* potterycoffeec:
+Photo by Cup of Couple from Pexels */
+
+
+/* beautifullcoffeec:
+Photo by SpotwizardLee from Pexels */
+
+/* bigcoffeec:
+Photo by Ioana Motoc from Pexels */
+
+/* whitebigcoffeec:
+Photo by cottonbro from Pexels */
+
+/* smallwhitecoffeec:
+Photo by Rachel Claire from Pexels */
+
+/* bigpinkcoffeec:
+Photo by Harper Sunday from Pexels */
+
+/* greencoffeec:
+Photo by Olga Mironova from Pexels */
+
+/* greenbrowncoffeec:
+Photo by Nida from Pexels */
+
+/* portablecoffeec:
+Photo by Quang Anh Ha Nguyen from Pexels */
+
+/* greynicecoffeec:
+Photo by Anna Rye from Pexels */
+
+/* bigbeautifulcoffeec:
+Photo by Karolina Grabowska from Pexels */
+
+/* orangecoffeec:
+Photo by Tim Douglas from Pexels */
+
+/* whitegoldcoffeec:
+Photo by Ioana Motoc from Pexels */
+
+/* verynicecoffeec:
+Photo by Eneida Nieves from Pexels */
+
+
+/* uniccoffec:
+Photo by Skyler Ewing from Pexels */
+
+
+
+
+
+
+/*......................................................................
+
+/* coffeeHomePage:
+
+Photo by Jean-Paul Wright from Pexels
+*/
+
+/*.....................................................................
+
+
+
+/* beans1:
+Photo by Cup of Couple from Pexels */
+
+
+/* beans2:
+Photo by Cup of Couple from Pexels */
+
+/* beans3:
+ Photo by Denys Gromov from Pexels*/
+
+
+/* beans4:
+Photo by Thirdman from Pexels */
+
+/* beams5:
+Photo by Los Muertos Crew from Pexels */
+
+/* beans6:
+istock */
+
+/* beans7:
+Photo by Ave Calvar Martinez from Pexels */
+
+/* beans8:
+Photo by bacho nadiradze from Pexels */
+
+/* beans9:
+Photo by Cup of Couple from Pexels */
+
+/* beans10:
+Photo by Alexas Fotos from Pexels */
+
+/* beans11:
+Photo by Engin Akyurt from Pexels */
+
+/* beans12:
+Photo by Ryutaro Tsukata from Pexels */
+
+/* beans13:
+Photo by Cup of Couple from Pexels */
+
+/* beans14
+Photo by cottonbro from Pexels */
+
+/* beans15:
+Photo by Nicola Barts from Pexels */
+
+/* beans16:
+Photo by lyncoln Miller from Pexels */
+
+/* beans17:
+Photo by Mariakray from Pexels */
+
+/* beans18:
+Photo by Pavel Danilyuk from Pexels */
+
+/* beans19:
+Photo by Cup of Couple from Pexels */
+
+/* beans20:
+Photo by Lisa from Pexels */
