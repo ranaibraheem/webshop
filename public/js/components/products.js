@@ -45,7 +45,7 @@ Vue.component('products', {
         </a>
         <div class="card-body">
             <h5>{{product.name}}</h5><hr>
-            <p class="card-text">{{productb.text}}</p><hr>
+            <p class="card-text">{{product.text}}</p><hr>
             <p v-if="product.onSale30"><b>Sale 30%</b> 
                 <span class="onSale">{{product.price}}$</span><br>
                 <span class="newPrice30"> New Price: <b>{{product.newPrice30}}$</b></span>
