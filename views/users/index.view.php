@@ -1,5 +1,5 @@
 <?php require 'views/partials/header.view.php' ?>
-    <section class="container-fluid row">
+    <section class="container">
         <ul>
             <?php foreach($users as $user) : ?>
                 <li>

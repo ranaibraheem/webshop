@@ -78,5 +78,3 @@ class MigrateDatabase
     }
 
 }
-
-//Static methods can be called directly - without creating an instance of the class first.

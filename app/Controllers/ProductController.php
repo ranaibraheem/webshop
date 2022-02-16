@@ -50,8 +50,22 @@ class ProductController extends Controller
          
     }
 
-    public function show()
-    {
-        
+        public function show()
+        {
+            $productId = Helper::getIdFromUrl('products');
+            
+            $product = ProductModel::load()->get((int)$productId);
+            
+            return View::render('products/show.view', [
+                'name'          =>  $product -> name, 
+                'image'         =>  '/public/images/webshop/' . $product -> image , 
+                'text'          =>  $product -> text,
+                'info'          =>  $product -> info,
+                'onSale30'      =>  $product -> onSale30,
+                'onSale50'      =>  $product -> onSale50,
+                'price'         =>  $product -> price, 
+                'stock'         =>  $product -> stock, 
+            ]);
+        }  
     }
-}
+    

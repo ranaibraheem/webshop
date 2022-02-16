@@ -3,7 +3,7 @@
 /** --------------------------------------------------------------------------------------------------------
  * Add your routes here.
  * 
- * Protect your routes with one or more Middleware classes, like WhenNotLoggedIn or Permissions.
+ * Protect your routes with one ore more Middleware classes, like WhenNotLoggedIn or Permissions.
  *  See the classes for more information.
  * Add Middleware in an associative array with a key, like the admin route
  * ---------------------------------------------------------------------------------------------------------
@@ -30,6 +30,14 @@ $router->post('register', 'App/Controllers/RegisterController.php@store', 'regis
 $router->get('admin', 'App/Controllers/AdminController.php@index', 'admin',[
     'auth' => WhenNotLoggedin::class,
 ]);
+$router->get('products', 'App/Controllers/ProductController.php@show', 'details');
+$router->get('products/{id}', 'App/Controllers/ProductController.php@show', 'showdetail');
+
+$router->get('productsb', 'App/Controllers/ProductbController.php@show', 'detailsb');
+$router->get('productsb/{id}', 'App/Controllers/ProductbController.php@show', 'showdetailb');
+
+$router->get('productsc', 'App/Controllers/ProductcController.php@show', 'detailsc');
+$router->get('productsc/{id}', 'App/Controllers/ProductcController.php@show', 'showdetailc');
 
 // User routes
 $router->get('user', 'App/Controllers/UserController.php@index', 'admin.user.index', ['show' => Permissions::class]);
@@ -41,3 +49,5 @@ $router->post('user/{id}/update', 'App/Controllers/UserController.php@update', '
 $router->get('user/{id}/destroy', 'App/Controllers/UserController.php@destroy', 'admin.user.destroy', ['delete' => Permissions::class]);
 
 $router->get('products', 'App/Controllers/ProductController.php@index', 'products');
+$router->get('productsb', 'App/Controllers/ProductbController.php@index', 'productsb');
+$router->get('productsc', 'App/Controllers/ProductcController.php@index', 'productsc');

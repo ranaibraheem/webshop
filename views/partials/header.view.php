@@ -7,4 +7,5 @@
         :total-quantity-b="totalQuantityB" :total-price-b="totalPriceB" :cart-c="cartC" :shopping-cart-c="shoppingCartC"
         :total-quantity-c="totalQuantityC" :total-price-c="totalPriceC">
     </shopping>
+    <?= fullNameFromSession() ?>
 </header>

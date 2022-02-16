@@ -59,7 +59,7 @@ class UserController extends Controller
         $user['created'] = date('Y-m-d H:i:s');
 
         // Save the record to the database
-        UserModel::load()->store($user[]);
+        UserModel::load()->store($user);
     }
 
     /**

@@ -1,9 +1,9 @@
 Vue.component('shopping', {
     data() {
         return {
-            products:[],
-            productsb: [],
-            productsc: [],
+            // products:[],
+            // productsb: [],
+            // productsc: [],
        }
     },
     props: {
@@ -43,9 +43,9 @@ Vue.component('shopping', {
     },
 
     created() {
-        this.products = machines;
-        this.productsb = beans;
-        this.productsc = cups;
+        // this.products = machines;
+        // this.productsb = beans;
+        // this.productsc = cups;
     },
 
     methods: {
@@ -62,6 +62,10 @@ Vue.component('shopping', {
         removeProductc(index) {
             this.$root.$emit('remove-productc', index)
         },
+        updateCart(product, updateType) {
+            this.$root.$emit('update-cart', product, updateType)
+        },
+
     },
 
     template: `            
@@ -108,8 +112,20 @@ Vue.component('shopping', {
                             <span v-else><b>$ {{product.price*product.quantity}}</b></span><br>
                             <span>
                                 <span id="shopping">Delete:</span>
-                                <i class="fa fa-trash-o" id="deletBtn" @click=" removeProduct(index)"></i>
-                            </span><hr>
+                                <i class="fa fa-trash-o" id="deletBtn" @click="removeProduct(index)"></i>
+                            </span>
+                            <div class="col-md-12">
+                                <img :src="'/public/images/webshop/' + product.image" width="40%">
+                                <span>&#x1F6D2;</span>
+                                <button class="addToCart btn btn-primary" @click="updateCart(product,'substract')"
+                                    :disabled="product.stock === 0 && product.quantity===0"
+                                    :class="{disabledButton: product.stock===0 && product.quantity===0}">-
+                                </button>
+                                <span>{{product.quantity}}</span>
+                                <button class=" addToCart btn btn-primary" @click="updateCart(product,'add')"
+                                    :disabled="product.stock === 0" :class="{disabledButton: product.stock === 0}">+
+                                </button>
+                            </div><hr>
                         </li>
                     </ul>
                     <h5 class="modal-title" id="staticBackdropLabel">Beans products:</h5>
@@ -133,7 +149,19 @@ Vue.component('shopping', {
                             <span>
                                 <span id="shopping">Delete:</span>
                                 <i class="fa fa-trash-o" id="deletBtn" @click=" removeProductb(index)"></i>
-                            </span><hr>
+                            </span>
+                            <div class="col-md-12">
+                                <img :src="'/public/images/webshop/' + productb.image" width="40%">
+                                <span>&#x1F6D2;</span>
+                                <button class="addToCart btn btn-primary" @click="updateCart(productb,'substract')"
+                                    :disabled="productb.stock === 0 && productb.quantity===0"
+                                    :class="{disabledButton: productb.stock===0 && productb.quantity===0}">-
+                                </button>
+                                <span>{{productb.quantity}}</span>
+                                <button class=" addToCart btn btn-primary" @click="updateCart(productb,'add')"
+                                    :disabled="productb.stock === 0" :class="{disabledButton: productb.stock === 0}">+
+                                </button>
+                            </div><hr>
                         </li>
                     </ul>
                     <h5 class="modal-title" id="staticBackdropLabel">Cups products:</h5>
@@ -157,7 +185,19 @@ Vue.component('shopping', {
                             <span>
                                 <span id="shopping">Delete:</span>
                                 <i class="fa fa-trash-o" id="deletBtn" @click=" removeProductc(index)"></i>
-                            </span><hr>
+                            </span>
+                            <div class="col-md-12">
+                                <img :src="'/public/images/webshop/' + productc.image" width="40%">
+                                <span>&#x1F6D2;</span>
+                                <button class="addToCart btn btn-primary" @click="updateCart(productc,'substract')"
+                                    :disabled="productc.stock === 0 && productc.quantity===0"
+                                    :class="{disabledButton: productc.stock===0 && productc.quantity===0}">-
+                                </button>
+                                <span>{{productc.quantity}}</span>
+                                <button class=" addToCart btn btn-primary" @click="updateCart(productc,'add')"
+                                    :disabled="productc.stock === 0" :class="{disabledButton: productc.stock === 0}">+
+                                </button>
+                            </div><hr>
                         </li>
                     </ul>
                     <h5 class="modal-title" id="staticBackdropLabel">Total:</h5>

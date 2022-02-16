@@ -14,4 +14,3 @@ class AdminController
         ]);
     }
 }
-//:: roep static function --Static methods can be called directly - without creating an instance of the class first.

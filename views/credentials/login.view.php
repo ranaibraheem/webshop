@@ -4,7 +4,8 @@
     </button>
 
     <div class="form-group">
-        <form method="POST" action="?page=login&action=login" id="logIn" class="row g-3">
+        <form method="POST" name="frmLogin" onsubmit="return false;" id="logIn" class="row g-3">
+        <?= generateFormTokenHTML() ?>
             <div class="col-md-6">
                 <label for="inputEmail4" class="label">Email</label>
                 <input type="email" name="email" class="form-control" id="inputEmail4" required>
@@ -30,3 +31,5 @@
         </form>
     </div>
 </div>
+
+<script src="public/js/partials/login.js"></script>

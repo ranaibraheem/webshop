@@ -1,18 +1,27 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.1.3",
-    "gitignore": "^0.7.0",
-    "jquery": "^3.6.0",
-    "jquery-ui": "^1.13.0",
-    "vue": "^2.6.14"
-  },
-  "name": "webshop",
+  "name": "guitartists",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Rana",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TobyVersteeg/guitartists.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "description": "coffee"
+  "bugs": {
+    "url": "https://github.com/TobyVersteeg/guitartists/issues"
+  },
+  "homepage": "https://github.com/TobyVersteeg/guitartists#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.7.0",
+    "jquery": "^3.6.0",
+    "vue": "^2.6.14"
+  }
 }

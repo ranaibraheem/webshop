@@ -11,33 +11,33 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <link rel="stylesheet" href="/assets/css/body.css">
-        <link rel="stylesheet" href="/assets/css/signIn.css">
-        <link rel="stylesheet" href="/assets/css/card.css">
-        <link rel="stylesheet" href="/assets/css/detail.css">
-        <link rel="stylesheet" href="/assets/css/footer.css">
-        <link rel="stylesheet" href="/assets/css/header.css">
-        <link rel="stylesheet" href="/assets/css/home.css">
-        <link rel="stylesheet" href="/assets/css/login.css">
-        <link rel="stylesheet" href="/assets/css/nav.css">
-        <link rel="stylesheet" href="/assets/css/responsive.css">
-        <link rel="stylesheet" href="/assets/css/sidenav.css">
+        <link rel="stylesheet" href="/public/css/body.css">
+        <link rel="stylesheet" href="/public/css/signIn.css">
+        <link rel="stylesheet" href="/public/css/card.css">
+        <link rel="stylesheet" href="/public/css/detail.css">
+        <link rel="stylesheet" href="/public/css/footer.css">
+        <link rel="stylesheet" href="/public/css/header.css">
+        <link rel="stylesheet" href="/public/css/home.css">
+        <link rel="stylesheet" href="/public/css/login.css">
+        <link rel="stylesheet" href="/public/css/nav.css">
+        <link rel="stylesheet" href="/public/css/responsive.css">
+        <link rel="stylesheet" href="/public/css/sidenav.css">
         
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
         <script src="/node_modules/vue/dist/vue.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-        <script src="/assets/js/machines.js"></script>
-        <script src="/assets/js/components/products.js"></script>
-        <script src="/assets/js/components/cart.js"></script>
-        <script src="/assets/js/cups.js"></script>
-        <script src="/assets/js/components/productsc.js"></script>
-        <script src="/assets/js/beans.js"></script>
-        <script src="/assets/js/components/productsb.js"></script>
-        <script src="/assets/js/components/detailm.js"></script>
+        <script src="/public/js/machines.js"></script>
+        <script src="/public/js/components/products.js"></script>
+        <script src="/public/js/components/cart.js"></script>
+        <script src="/public/js/cups.js"></script>
+        <script src="/public/js/components/productsc.js"></script>
+        <script src="/public/js/beans.js"></script>
+        <script src="/public/js/components/productsb.js"></script>
+        <script src="/public/js/components/detailm.js"></script>
 
-        <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico" />
     </head>
 <body>
     <main id="app">

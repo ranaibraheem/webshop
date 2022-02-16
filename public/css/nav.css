@@ -6,7 +6,7 @@ h2 {
 }
 
 header {
-    background-image: url('/assets/images/background.jpg');
+    background-image: url('/public/images/background.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border: solid grey 2px;

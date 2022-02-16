@@ -2,7 +2,7 @@ Vue.component('productsc', {
     data() {
         return {
             productsc: [],
-            imagePath: '/assets/images/webshop/',
+            imagePath: '/public/images/webshop/',
         }
     },
     props: {},
@@ -46,10 +46,9 @@ Vue.component('productsc', {
             <button class=" addToCart btn btn-primary" @click="updateCartc(productc,'add')"
                 :disabled="productc.stock === 0" :class="{disabledButton: productc.stock === 0}">+
             </button><hr>
-            <a>
+            <a :href="'productsc/' + productc.id">
                 <button class="btn btn-primary" style="margin-left:4rem">More Details</button>
             </a>
-
         </div>
     </div>
 </section>

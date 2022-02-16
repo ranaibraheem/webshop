@@ -3,7 +3,7 @@
 //         return {
 //             products:[],
 //             machines:[],
-//             imagePath: '/assets/images/webshop/',
+//             imagePath: '/public/images/webshop/',
 //             detailproducts: [],
 //         }
 //     },

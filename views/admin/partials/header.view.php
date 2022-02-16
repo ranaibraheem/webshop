@@ -7,4 +7,8 @@
         :total-quantity-b="totalQuantityB" :total-price-b="totalPriceB" :cart-c="cartC" :shopping-cart-c="shoppingCartC"
         :total-quantity-c="totalQuantityC" :total-price-c="totalPriceC">
     </shopping>
+    <div class="col-md-2 text-right pr-4">
+        <a href="logout">Uitloggen</a>
+        <div><?= fullNameFromSession() ?></div>
+    </div>
 </header>

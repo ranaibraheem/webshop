@@ -1,6 +1,4 @@
 <?php
-//oop:
-
 
 require 'vendor/autoload.php';
 

@@ -3,7 +3,7 @@
         <div class="sidenav">
             <div id="homeNav">
                 <div class="sideBtn">
-                    <a href="/?page=coffeeMachines" class="btn btn-primary">Products</a>
+                    <a href="/products" class="btn btn-primary">Products</a>
                 </div>
 
                 <div class="sideBtn">
@@ -35,6 +35,6 @@
                 </div>
             </div>
         </div>
-        <img id="homeImg" src="/assets/images/coffeeGif1.gif" alt="animated coffee cup">
+        <img id="homeImg" src="/public/images/coffeeGif1.gif" alt="animated coffee cup">
     </div>
 <?php require 'views/partials/footer.view.php' ?>

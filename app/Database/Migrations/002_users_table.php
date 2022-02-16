@@ -13,7 +13,7 @@ return [
         `last_name` varchar(200) NOT NULL,
         `email` varchar(200) NOT NULL,
         `password` varchar(200) NOT NULL,
-        `confirma_password` varchar(200) NOT NULL,
+        `confirma_password` varchar(200),
         `country` int(11),
         `city` varchar(255),
         `birthday` date,

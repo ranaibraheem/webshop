@@ -2,7 +2,7 @@ Vue.component('products', {
     data() {
         return {
             products:[],
-            imagePath: '/assets/images/webshop/',
+            imagePath: '/public/images/webshop/',
         }
     },
 
@@ -12,6 +12,24 @@ Vue.component('products', {
     created() {
         this.products = machines;
     },
+
+    // created() {
+    //     let self = this;
+
+    //     // Get all products calling function in controller (Ajax call)
+    //     axios({
+    //         method: 'GET',
+    //         url: 'home/products',
+    //         headers: {
+    //             "X-Requested-With": "XMLHttpRequest"
+    //         }
+    //     }).then(function(response) {
+    //         self.products = response.data.products;
+    //     }).catch(function(response) {
+
+    //     })
+    // },
+
 
     methods: {
         updateCart(product, updateType) {
@@ -27,7 +45,7 @@ Vue.component('products', {
         </a>
         <div class="card-body">
             <h5>{{product.name}}</h5><hr>
-            
+            <p class="card-text">{{productb.text}}</p><hr>
             <p v-if="product.onSale30"><b>Sale 30%</b> 
                 <span class="onSale">{{product.price}}$</span><br>
                 <span class="newPrice30"> New Price: <b>{{product.newPrice30}}$</b></span>
@@ -49,7 +67,7 @@ Vue.component('products', {
             <button class=" addToCart btn btn-primary" @click="updateCart(product,'add')"
                 :disabled="product.stock === 0" :class="{disabledButton: product.stock === 0}">+
             </button><hr>
-            <a>
+            <a :href="'products/' + product.id">
                 <button class="btn btn-primary" style="margin-left:4rem">More Details</button>
             </a>
         </div>

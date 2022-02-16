@@ -2,9 +2,7 @@ Vue.component('productsb', {
     data() {
         return {
             productsb: [],
-            imagePath: '/assets/images/webshop/',
-            detailPath: '/?page=detail-beans',
-
+            imagePath: '/public/images/webshop/',
         }
     },
     props: {
@@ -52,10 +50,9 @@ Vue.component('productsb', {
             <button class=" addToCart btn btn-primary" @click="updateCartb(productb,'add')"
                 :disabled="productb.stock === 0" :class="{disabledButton: productb.stock === 0}">+
             </button><hr>
-            <a>
+            <a :href="'productsb/' + productb.id">
                 <button class="btn btn-primary" style="margin-left:4rem">More Details</button>
             </a>
-
         </div>
     </div>
 </section>
