@@ -64,7 +64,8 @@ class productcController extends Controller
                 'onSale30'      =>  $productc -> onSale30,
                 'onSale50'      =>  $productc -> onSale50,
                 'price'         =>  $productc -> price, 
-                'stock'         =>  $productc -> stock, 
+                'stock'         =>  $productc -> stock,
+                'quantity'      =>  $productc -> quantity, 
             ]);
         }  
     }

@@ -84,7 +84,7 @@ class Model
      * @param $data array
      * @return array of the new record
      */
-    public function store(array $data)
+    public function store($data)
     {
         return MySql::insert($this->removeIllegalFields($data), $this->model);
     }

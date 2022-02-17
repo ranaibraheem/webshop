@@ -65,7 +65,8 @@ class ProductbController extends Controller
                 'onSale30'      =>  $productb -> onSale30,
                 'onSale50'      =>  $productb -> onSale50,
                 'price'         =>  $productb -> price, 
-                'stock'         =>  $productb -> stock, 
+                'stock'         =>  $productb -> stock,
+                'quantity'      =>  $productb -> quantity, 
             ]);
         }  
     }

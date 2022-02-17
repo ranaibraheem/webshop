@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'f6d537d07ebc7fa2b00f0644395e6f754581e1ac',
+        'reference' => 'af8e3aa11bb0be76117d18fc50b5e7f8c625c8b8',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'f6d537d07ebc7fa2b00f0644395e6f754581e1ac',
+            'reference' => 'af8e3aa11bb0be76117d18fc50b5e7f8c625c8b8',
             'dev_requirement' => false,
         ),
         'graham-campbell/result-type' => array(

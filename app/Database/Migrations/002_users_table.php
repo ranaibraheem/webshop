@@ -58,7 +58,7 @@ return [
             'last_name'  => 'Zorom',
             'email'      => 'anas.zorom@mail',
             'password'   => password_hash('anashallo', PASSWORD_DEFAULT),
-            'role'       => 2,
+            'role'       => 1,
             'country'    => 150,
             'city'       => 'Groningen',
             'birthday'   => '1979-11-13',
