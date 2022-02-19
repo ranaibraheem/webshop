@@ -63,6 +63,14 @@ var app = new Vue({
 	},
 
 	methods: {
+		        /**
+         * Adds a new product to the cart or changes the amount of an 
+         *  existing product in the cart
+         * 
+         * @param product (object)
+         * @returns void
+         */
+
 
 		sale30() {
 			this.products.forEach(product => {

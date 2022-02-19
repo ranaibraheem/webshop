@@ -7,7 +7,6 @@ use App\Models\UserModel;
 use App\Libraries\View;
 use App\Models\RoleModel;
 use App\Requests\UserRequest;
-
 class UserController extends Controller
 {
 

@@ -58,7 +58,7 @@ return [
             'last_name'  => 'Zorom',
             'email'      => 'anas.zorom@mail',
             'password'   => password_hash('anashallo', PASSWORD_DEFAULT),
-            'role'       => 2,
+            'role'       => 1,
             'country'    => 150,
             'city'       => 'Groningen',
             'birthday'   => '1979-11-13',
@@ -168,7 +168,35 @@ return [
             'birthday'   => '1999-06-18',
             'created_at' => date('Y-m-d H:i:s'),
             'created_by' => 1,
+        ],
+
+        [
+            'first_name' => 'green',
+            'last_name'  => 'tree',
+            'email'      => 'green.tree@mail',
+            'password'   => password_hash('greenhallo', PASSWORD_DEFAULT),
+            'role'       => 3,
+            'country'    => 150,
+            'city'       => 'Groningen',
+            'birthday'   => '2021-09-08',
+            'created_at' => date('Y-m-d H:i:s'),
+            'created_by' => 1,
+        ],
+
+        [
+            'first_name' => 'rana',
+            'last_name'  => 'ibreaheem',
+            'email'      => 'ranaibraheem@mail',
+            'password'   => password_hash('ranahallo', PASSWORD_DEFAULT),
+            'role'       => 1,
+            'country'    => 150,
+            'city'       => 'Groningen',
+            'birthday'   => '1982-07-24',
+            'created_at' => date('Y-m-d H:i:s'),
+            'created_by' => 1,
         ]
+
+
         ),
     ],
 ];

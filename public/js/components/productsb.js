@@ -9,8 +9,24 @@ Vue.component('productsb', {
     },
 
     created() {
+        let self = this;
         this.productsb = beans;
+
+        // Get all products calling function in controller (Ajax call)
+        axios({
+            method: 'GET',
+            url: 'home/products',
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        }).then(function(response) {
+            self.beans = response.data.beans;
+        }).catch(function(response) {
+
+        })
     },
+
+
 
     methods: {
         updateCartb(productb, updateType) {

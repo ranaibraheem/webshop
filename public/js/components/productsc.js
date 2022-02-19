@@ -6,9 +6,25 @@ Vue.component('productsc', {
         }
     },
     props: {},
+
     created() {
+        let self = this;
         this.productsc = cups;
+
+        // Get all products calling function in controller (Ajax call)
+        axios({
+            method: 'GET',
+            url: 'home/products',
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        }).then(function(response) {
+            self.cups = response.data.cups;
+        }).catch(function(response) {
+
+        })
     },
+
     methods: {
         updateCartc(productc, updateType) {
             this.$root.$emit('update-cartc', productc, updateType)

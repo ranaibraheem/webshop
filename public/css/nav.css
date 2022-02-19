@@ -2,7 +2,7 @@ h2 {
     font-size: 3em;
     color: #370617;
     text-align: center;
-    padding-top: 2.5rem;
+    padding-top: 0.5rem;
 }
 
 header {
@@ -11,7 +11,7 @@ header {
     background-size: 100% 100%;
     border: solid grey 2px;
     border-radius: 20px;
-    height: 180px;
+    height: 200px;
     margin: 1em;
 }
 
@@ -38,11 +38,6 @@ header {
     margin: 1rem;
 }
 
-#password {
-    background-color: #eae0d5;
-    border-radius: 0.5rem;
-    margin: 1rem;
-}
 
 .dropdown-menu {
     background-color: #414833;

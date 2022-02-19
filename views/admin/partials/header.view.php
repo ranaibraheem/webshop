@@ -1,14 +1,15 @@
-<header>
-    <h2>
-        <div v-html="brand">{{brand}}</div>
-    </h2>
-    <shopping ref="shoppingComponent" :cart="cart" :shopping-cart="shoppingCart" :total-quantity="totalQuantity"
-        :total-price="totalPrice":cart-b="cartB" :shopping-cart-b="shoppingCartB"
-        :total-quantity-b="totalQuantityB" :total-price-b="totalPriceB" :cart-c="cartC" :shopping-cart-c="shoppingCartC"
-        :total-quantity-c="totalQuantityC" :total-price-c="totalPriceC">
-    </shopping>
-    <div class="col-md-2 text-right pr-4">
-        <a href="logout">Uitloggen</a>
-        <div><?= fullNameFromSession() ?></div>
-    </div>
-</header>
+<?php require 'views/partials/header.view.php' ?>
+    
+<div class="form-group login" >
+    <h3 class="col-md-1">Admin</h3>
+    
+    <span><?= fullNameFromSession() ?></span>
+
+    <a href="logout" class="btn btn-primary col-md-1">Logout</a>
+
+    <a href="user" class="btn btn-primary col-md-1">Users</a>
+
+    <a href="/" class="fixlink btn btn-primary col-md-1">Home</a>
+</div>
+
+<?php require 'views/partials/footer.view.php' ?>

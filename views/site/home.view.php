@@ -7,18 +7,16 @@
                 </div>
 
                 <div class="sideBtn">
-                    <a href="/?page=login" class="btn btn-primary">Login</a>
+                    <a href="/login" class="btn btn-primary">Log in</a>
                 </div>
-
                 <div class="sideBtn">
-                    <a href="/?page=register" class="btn btn-primary">Register</a>
+                    <a href="/register" class="btn btn-primary">Register</a>
                 </div>
-
-                <div class="sideBtn">
+                <!-- <div class="sideBtn">
                     <button type="bottom" class="btn btn-primary">
-                        <a style="color:#cad2c5" href="?page=user&action=edit&id=">Edit Account</a>
+                        <a style="color:#cad2c5" href="/edit">Edit Account</a>
                     </button>
-                </div>
+                </div> -->
 
                 <div class="sideBtn">
                     <button class="btn btn-primary" type="button" id="dropdownMenuButton1"
