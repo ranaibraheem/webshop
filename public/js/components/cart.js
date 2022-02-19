@@ -1,9 +1,9 @@
 Vue.component('shopping', {
     data() {
         return {
-            // products:[],
-            // productsb: [],
-            // productsc: [],
+            products:[],
+            productsb: [],
+            productsc: [],
        }
     },
     props: {
@@ -43,9 +43,11 @@ Vue.component('shopping', {
     },
 
     created() {
-        // this.products = machines;
-        // this.productsb = beans;
-        // this.productsc = cups;
+
+        this.products = machines;
+        this.productsc = cups;
+        this.productsb = beans;
+
     },
 
     methods: {
@@ -65,7 +67,12 @@ Vue.component('shopping', {
         updateCart(product, updateType) {
             this.$root.$emit('update-cart', product, updateType)
         },
-
+        updateCartb(productb, updateType) {
+            this.$root.$emit('update-cartb', productb, updateType)
+        },
+        updateCartc(productc, updateType) {
+            this.$root.$emit('update-cartc', productc, updateType)
+        },
     },
 
     template: `            
@@ -153,12 +160,12 @@ Vue.component('shopping', {
                             <div class="col-md-12">
                                 <img :src="'/public/images/webshop/' + productb.image" width="40%">
                                 <span>&#x1F6D2;</span>
-                                <button class="addToCart btn btn-primary" @click="updateCart(productb,'substract')"
+                                <button class="addToCart btn btn-primary" @click="updateCartb(productb,'substract')"
                                     :disabled="productb.stock === 0 && productb.quantity===0"
                                     :class="{disabledButton: productb.stock===0 && productb.quantity===0}">-
                                 </button>
                                 <span>{{productb.quantity}}</span>
-                                <button class=" addToCart btn btn-primary" @click="updateCart(productb,'add')"
+                                <button class=" addToCart btn btn-primary" @click="updateCartb(productb,'add')"
                                     :disabled="productb.stock === 0" :class="{disabledButton: productb.stock === 0}">+
                                 </button>
                             </div><hr>
@@ -189,12 +196,12 @@ Vue.component('shopping', {
                             <div class="col-md-12">
                                 <img :src="'/public/images/webshop/' + productc.image" width="40%">
                                 <span>&#x1F6D2;</span>
-                                <button class="addToCart btn btn-primary" @click="updateCart(productc,'substract')"
+                                <button class="addToCart btn btn-primary" @click="updateCartc(productc,'substract')"
                                     :disabled="productc.stock === 0 && productc.quantity===0"
                                     :class="{disabledButton: productc.stock===0 && productc.quantity===0}">-
                                 </button>
                                 <span>{{productc.quantity}}</span>
-                                <button class=" addToCart btn btn-primary" @click="updateCart(productc,'add')"
+                                <button class=" addToCart btn btn-primary" @click="updateCartc(productc,'add')"
                                     :disabled="productc.stock === 0" :class="{disabledButton: productc.stock === 0}">+
                                 </button>
                             </div><hr>

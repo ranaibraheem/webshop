@@ -22,6 +22,8 @@
         <link rel="stylesheet" href="/public/css/nav.css">
         <link rel="stylesheet" href="/public/css/responsive.css">
         <link rel="stylesheet" href="/public/css/sidenav.css">
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         
         <script src="/node_modules/jquery/dist/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>

@@ -8,27 +8,24 @@ Vue.component('products', {
 
     props: {
     },
-
+   
     created() {
+        let self = this;
         this.products = machines;
+
+        // Get all products calling function in controller (Ajax call)
+        axios({
+            method: 'GET',
+            url: 'home/products',
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            }
+        }).then(function(response) {
+            self.machines = response.data.machines;
+        }).catch(function(response) {
+
+        })
     },
-
-    // created() {
-    //     let self = this;
-
-    //     // Get all products calling function in controller (Ajax call)
-    //     axios({
-    //         method: 'GET',
-    //         url: 'home/products',
-    //         headers: {
-    //             "X-Requested-With": "XMLHttpRequest"
-    //         }
-    //     }).then(function(response) {
-    //         self.products = response.data.products;
-    //     }).catch(function(response) {
-
-    //     })
-    // },
 
 
     methods: {

@@ -38,6 +38,5 @@
     </div>
 </div>
 
-<script src="public/js/partials/login.js"></script>
 <?php require 'views/partials/footer.view.php' ?>
 

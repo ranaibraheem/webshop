@@ -3,9 +3,7 @@
 <div class="login-overlay">
     <div class="center-box register-form">
         <div class="mb-3">
-        <button class= "btn btn-primary">
-        <a href="/" class="fixlink">Home</a>
-    </button>
+            <a href="/" class="fixlink btn btn-primary">Home</a>
 
             <h3>Register</h3>
         </div>
@@ -19,6 +17,16 @@
                 <div class="col-md-6 mb-3">
                     <label for="last_name" class="form-label">Last name</label>
                     <input type="text" class="form-control" name="last_name" id="last_name" maxlength="80" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" name="city" id="city" maxlength="80" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="birthday" class="form-label">Birthday</label>
+                    <input type="text" class="form-control" name="birthday" id="birthday" maxlength="80" required>
                 </div>
                 
                 <div class="col-md-12 mb-3">
@@ -48,8 +56,5 @@
     </div>
 </div>
 </div>
-
-<script src="public/js/partials/register.js"></script>
-<script src="public/js/partials/login.js"></script>
 
 <?php require 'views/partials/footer.view.php' ?>

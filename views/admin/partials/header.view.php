@@ -1,23 +1,15 @@
 <?php require 'views/partials/header.view.php' ?>
-<div class="form-group" >
-    <button class= "btn btn-primary">
-            <a href="/" class="fixlink">Home</a>
-    </button>
+    
+<div class="form-group login" >
+    <h3 class="col-md-1">Admin</h3>
+    
+    <span><?= fullNameFromSession() ?></span>
 
-    <div>
-        <div class="row">
-            <div class="col-md-10">
-                <h3>Admin</h3>
-            </div>
-            <div class="col-md-6">
-                <a href="user" class="btn btn-primary">Users</a>
-            </div>
+    <a href="logout" class="btn btn-primary col-md-1">Logout</a>
 
-            <div class="col-md-6">
-                <a href="logout" class="btn btn-primary">Logout</a>
-                <div><?= fullNameFromSession() ?></div>
-            </div>
-        </div>
-    </div>
+    <a href="user" class="btn btn-primary col-md-1">Users</a>
+
+    <a href="/" class="fixlink btn btn-primary col-md-1">Home</a>
 </div>
+
 <?php require 'views/partials/footer.view.php' ?>
