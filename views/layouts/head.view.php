@@ -33,11 +33,6 @@
         <script src="/public/js/machines.js"></script>
         <script src="/public/js/components/products.js"></script>
         <script src="/public/js/components/cart.js"></script>
-        <script src="/public/js/cups.js"></script>
-        <script src="/public/js/components/productsc.js"></script>
-        <script src="/public/js/beans.js"></script>
-        <script src="/public/js/components/productsb.js"></script>
-        <script src="/public/js/components/detailm.js"></script>
 
         <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico" />
     </head>

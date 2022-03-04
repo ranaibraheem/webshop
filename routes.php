@@ -31,15 +31,9 @@ $router->get('admin', 'App/Controllers/AdminController.php@index', 'admin',[
 $router->get('products', 'App/Controllers/ProductController.php@show', 'details');
 $router->get('products/{id}', 'App/Controllers/ProductController.php@show', 'showdetail');
 
-$router->get('productsb', 'App/Controllers/ProductbController.php@show', 'detailsb');
-$router->get('productsb/{id}', 'App/Controllers/ProductbController.php@show', 'showdetailb');
 
-$router->get('productsc', 'App/Controllers/ProductcController.php@show', 'detailsc');
-$router->get('productsc/{id}', 'App/Controllers/ProductcController.php@show', 'showdetailc');
 
 $router->get('products', 'App/Controllers/ProductController.php@index', 'productsmachines');
-$router->get('productsb', 'App/Controllers/ProductbController.php@index', 'productsbeans');
-$router->get('productsc', 'App/Controllers/ProductcController.php@index', 'productscupc');
 
 // User routes
 $router->get('user', 'App/Controllers/UserController.php@index', 'admin.user.index');

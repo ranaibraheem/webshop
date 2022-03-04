@@ -5,10 +5,7 @@
 
     </h2>
     <shopping ref="shoppingComponent" :cart="cart" :shopping-cart="shoppingCart" :total-quantity="totalQuantity"
-        :total-price="totalPrice":cart-b="cartB" :shopping-cart-b="shoppingCartB"
-        :total-quantity-b="totalQuantityB" :total-price-b="totalPriceB" :cart-c="cartC" :shopping-cart-c="shoppingCartC"
-        :total-quantity-c="totalQuantityC" :total-price-c="totalPriceC">
+        :total-price="totalPrice">
     </shopping>
-    <a href="logout" class="btn btn-primary">Login/Logout</a><?= fullNameFromSession() ?>
-
+    <!-- <a href="logout" class="btn btn-primary">Login/Logout</a><?= fullNameFromSession() ?> -->
 </header>
