@@ -7,6 +7,7 @@
         <a href="/" class="btn btn-primary">Home</a>
         <a href="/products" class="btn btn-primary">Products</a>
     </div>
+
 </nav>
 
 <div class="products block">
